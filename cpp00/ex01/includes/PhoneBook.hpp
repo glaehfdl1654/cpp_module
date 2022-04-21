@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 15:09:37 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/21 01:27:08 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/04/21 14:57:47 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ private :
 	Contact	contact[8];
 	std::string	GetOneLine(void) const;
 	void	PrintTenLetter(std::string str) const;
-	void	PrintContactInfo(int i) const;
+	void	PrintContactSummaryInfo(int i) const;
+	void	PrintContactAllInfo(int i) const;
 public :
 	PhoneBook(void) : recentContactIndex(-1), full(false) {};
 	void	Add(void);
