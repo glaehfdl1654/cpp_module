@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 15:09:40 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/21 00:52:22 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/04/21 20:38:40 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ int	main(void)
 	{
 		std::string	input;
 
-		cout << "Choose Command : ADD, SEARCH, EXIT" << endl;
+		cout << "Choose Command(ADD, SEARCH, EXIT) : ";
 		cin >> input;
+		cin.ignore();
+		if (cin.eof())
+			return (0);
 		if (input == "ADD")
 			phoneBook.Add();
 		else if (input == "SEARCH")

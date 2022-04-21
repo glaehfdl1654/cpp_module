@@ -6,34 +6,33 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:34:29 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/21 18:03:35 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/04/21 20:57:18 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iomanip>
+#include <cstdlib>
 
 using std::cin;
 using std::cout;
 using std::endl;
-using std::getline;
-using std::setfill;
-using std::setw;
 
 std::string	PhoneBook::GetOneLine(void) const
 // 문자열의 맨 처음 문자가 꼭 잘려서 저장됨. 확인!!!!!!!!!!!!!!!!!
 {
 	std::string	str;
 
-	cin.ignore();
-	getline(cin, str);
+	std::getline(cin, str);
+	if (cin.eof())
+		exit(0);
 	return (str);
 }
 
 void	PhoneBook::PrintTenLetter(std::string str) const
 {
 	if (str.length() <= 10)
-		cout << setw(10) << str;
+		cout << std::setw(10) << str;
 	else
 		cout << str.substr(0, 9) << '.';
 }
@@ -100,6 +99,9 @@ void	PhoneBook::Search(void) const
 	{
 		cout << "Choose correct index : ";
 		cin >> i;
+		cin.ignore();
+		if (cin.fail())
+			exit(0);
 		if (!(0 <= i && i < 8))
 			continue ;
 		if ((i > recentContactIndex) && (full == false))
