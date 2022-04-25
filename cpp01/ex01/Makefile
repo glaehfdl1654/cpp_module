@@ -6,7 +6,7 @@
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 22:44:18 by jaejeong          #+#    #+#              #
-#    Updated: 2022/04/22 08:33:39 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/04/25 12:38:36 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,7 @@ CXXFLAGS	= -Wall -Werror -Wextra -std=c++98 -Iincludes
 NAME		= Zombie
 SRCNAME 	= main.cpp \
 			  Zombie.cpp \
-			  NewZombie.cpp \
-			  RandomChump.cpp
+			  zombieHorde.cpp
 SRCS		= $(addprefix $(SRCDIR)/, $(SRCNAME))
 SRCDIR		= srcs
 OBJS		= $(addprefix $(OBJDIR)/, $(SRCNAME:.cpp=.o))
