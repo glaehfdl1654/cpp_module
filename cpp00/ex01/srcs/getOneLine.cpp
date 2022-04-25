@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   getOneLine.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 15:09:40 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/25 18:37:37 by jaejeong         ###   ########.fr       */
+/*   Created: 2022/04/25 18:27:14 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/04/25 19:44:39 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PhoneBook.hpp"
 #include <iostream>
-#include <PhoneBook.hpp>
 
 using std::cin;
 using std::cout;
 using std::endl;
 
-int	main(void)
+std::string	GetOneLine(void)
 {
-	PhoneBook	phoneBook;
+	std::string	str;
 
-	while (1)
+	std::getline(cin >> std::ws, str);
+	if (cin.eof())
 	{
-		std::string	input;
-
-		cout << "Choose Command(ADD, SEARCH, EXIT) : ";
-		input = GetOneLine();
-		if (input == "ADD")
-			phoneBook.Add();
-		else if (input == "SEARCH")
-			phoneBook.Search();
-		else if (input == "EXIT")
-			break ;
-		else
-			cout << "Wrong Command" << endl;
+		cout << "EOF" << endl;
+		exit(0);
 	}
-	return (0);
+	return (str);
 }

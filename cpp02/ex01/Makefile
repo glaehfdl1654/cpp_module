@@ -5,18 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/04 15:09:44 by jaejeong          #+#    #+#              #
-#    Updated: 2022/04/25 18:32:57 by jaejeong         ###   ########.fr        #
+#    Created: 2022/04/25 21:41:16 by jaejeong          #+#    #+#              #
+#    Updated: 2022/04/25 21:41:17 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX			= c++
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98 -Iincludes
-NAME		= PhoneBook
+NAME		= Fixed
 SRCNAME 	= main.cpp \
-			  PhoneBook.cpp \
-			  Contact.cpp \
-			  getOneLine.cpp
+			  Fixed.cpp
 SRCS		= $(addprefix $(SRCDIR)/, $(SRCNAME))
 SRCDIR		= srcs
 OBJS		= $(addprefix $(OBJDIR)/, $(SRCNAME:.cpp=.o))

@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:34:29 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/21 20:57:18 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/04/25 19:43:55 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,6 @@
 using std::cin;
 using std::cout;
 using std::endl;
-
-std::string	PhoneBook::GetOneLine(void) const
-// 문자열의 맨 처음 문자가 꼭 잘려서 저장됨. 확인!!!!!!!!!!!!!!!!!
-{
-	std::string	str;
-
-	std::getline(cin, str);
-	if (cin.eof())
-		exit(0);
-	return (str);
-}
 
 void	PhoneBook::PrintTenLetter(std::string str) const
 {
@@ -50,11 +39,11 @@ void	PhoneBook::PrintContactSummaryInfo(int i) const
 
 void	PhoneBook::PrintContactAllInfo(int i) const
 {
-	cout << contact[i].GetFirstName() << endl;
-	cout << contact[i].GetLastName() << endl;
-	cout << contact[i].GetNickName() << endl;
-	cout << contact[i].GetPhoneNumber() << endl;
-	cout << contact[i].GetDarkestSecret() << endl;
+	cout << "FirstName: " << contact[i].GetFirstName() << endl;
+	cout << "LastName: " <<contact[i].GetLastName() << endl;
+	cout << "NickName: " <<contact[i].GetNickName() << endl;
+	cout << "PhoneNumber: " <<contact[i].GetPhoneNumber() << endl;
+	cout << "DarkestSecret: " <<contact[i].GetDarkestSecret() << endl;
 }
 
 void	PhoneBook::Add(void)
@@ -97,11 +86,21 @@ void	PhoneBook::Search(void) const
 	}
 	while (1)
 	{
+		// std::string	input;
 		cout << "Choose correct index : ";
+		// input = GetOneLine();
 		cin >> i;
 		cin.ignore();
-		if (cin.fail())
+		if (cin.eof())
+		{
+			cout << "EOF" << endl;
 			exit(0);
+		}
+		if (cin.fail()) {
+			std::cin.clear();
+			std::cin.ignore(INT_MAX, '\n');
+			continue;
+		}
 		if (!(0 <= i && i < 8))
 			continue ;
 		if ((i > recentContactIndex) && (full == false))

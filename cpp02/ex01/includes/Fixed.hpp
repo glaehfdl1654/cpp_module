@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 15:09:37 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/25 21:11:34 by jaejeong         ###   ########.fr       */
+/*   Created: 2022/04/25 21:43:57 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/04/26 01:31:37 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-# include "Contact.hpp"
+#include <iostream>
 
-class PhoneBook
+class Fixed
 {
 private :
-	int		recentContactIndex;
-	bool	full;
-	Contact	contact[8];
-	void	PrintTenLetter(std::string str) const;
-	void	PrintContactSummaryInfo(int i) const;
-	void	PrintContactAllInfo(int i) const;
+	int	fixedInt;
+	static const int	fractionalBit = 8;
 public :
-	PhoneBook(void) : recentContactIndex(-1), full(false) {};
-	void	Add(void);
-	void	Search(void) const;
+	Fixed();
+	Fixed(const int num);
+	Fixed(const float num);
+	Fixed(const Fixed& other);
+	Fixed& operator=(const Fixed& rhs);
+	~Fixed();
+	
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
+	float	toFloat(void) const;
+	int		toInt(void) const;
 };
 
-std::string	GetOneLine(void);
+std::ostream& operator<<(std::ostream& os, const Fixed &num);
 
 #endif
