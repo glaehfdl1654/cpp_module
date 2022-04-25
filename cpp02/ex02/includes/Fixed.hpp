@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 23:37:49 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/26 01:31:17 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/04/26 02:15:35 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Fixed
 {
 private :
-	int		value;
-	static const int	fractional_bit = 8;
+	int		fixedInt;
+	static const int	fractionalBit = 8;
 public :
 	Fixed();
 	Fixed(const Fixed &fixed);
@@ -29,12 +29,10 @@ public :
 	~Fixed();
 	Fixed &operator=(const Fixed &another);
 
-
-	const Fixed operator+( Fixed const &another) const;
+	const Fixed operator+(Fixed const &another) const;
 	const Fixed operator-(Fixed const &another) const;
 	const Fixed operator*(Fixed const &another) const;
 	const Fixed operator/(Fixed const &another) const;
-
 
 	bool	operator>(Fixed const &another) const;
 	bool	operator<(Fixed const &another) const;
@@ -56,5 +54,7 @@ public :
 	int		getRawBits() const;
 	void	setRawBits(int const raw);
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed &num);
 
 #endif
