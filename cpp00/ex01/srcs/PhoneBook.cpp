@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:34:29 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/25 19:43:55 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/04/27 14:13:53 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	PhoneBook::Add(void)
 void	PhoneBook::Search(void) const
 {
 	int i;
+	std::string	input;
 
 	if (recentContactIndex == -1)
 	{
@@ -86,26 +87,13 @@ void	PhoneBook::Search(void) const
 	}
 	while (1)
 	{
-		// std::string	input;
 		cout << "Choose correct index : ";
-		// input = GetOneLine();
-		cin >> i;
-		cin.ignore();
-		if (cin.eof())
-		{
-			cout << "EOF" << endl;
-			exit(0);
-		}
-		if (cin.fail()) {
-			std::cin.clear();
-			std::cin.ignore(INT_MAX, '\n');
-			continue;
-		}
-		if (!(0 <= i && i < 8))
+		input = GetOneLine();
+		if (!(('0' <= input[0] && input[0] < '8') && input.length() == 1))
 			continue ;
-		if ((i > recentContactIndex) && (full == false))
+		if ((input[0] > recentContactIndex + '0') && (full == false))
 			continue ;
 		break ;
 	}
-	PrintContactAllInfo(i);
+	PrintContactAllInfo(input[0] - '0');
 }
