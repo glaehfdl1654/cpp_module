@@ -6,13 +6,13 @@
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 02:38:28 by jaejeong          #+#    #+#              #
-#    Updated: 2022/04/26 02:39:22 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/04/27 18:38:49 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX			= c++
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98 -Iincludes
-NAME		= Weapon
+NAME		= weapon
 SRCNAME 	= main.cpp \
 			  Weapon.cpp \
 			  HumanA.cpp \

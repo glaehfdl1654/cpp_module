@@ -5,40 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/21 22:44:18 by jaejeong          #+#    #+#              #
-#    Updated: 2022/04/27 18:39:03 by jaejeong         ###   ########.fr        #
+#    Created: 2022/04/26 02:26:31 by jaejeong          #+#    #+#              #
+#    Updated: 2022/04/27 18:38:42 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX			= c++
-CXXFLAGS	= -Wall -Werror -Wextra -std=c++98 -Iincludes
-NAME		= zombie
-SRCNAME 	= main.cpp \
-			  Zombie.cpp \
-			  newZombie.cpp \
-			  randomChump.cpp
-SRCS		= $(addprefix $(SRCDIR)/, $(SRCNAME))
-SRCDIR		= srcs
-OBJS		= $(addprefix $(OBJDIR)/, $(SRCNAME:.cpp=.o))
-OBJDIR		= build
+CXX		= c++
+CXXFLAGS= -Wall -Werror -Wextra -std=c++98
+NAME	= replace
+SRCS	= main.cpp
+OBJS	= $(SRCS:.cpp=.o)
 
-all			: $(NAME)
+all		: $(NAME)
 
-$(NAME)		: $(OBJS)
+$(NAME)	: $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
+%.o		: %.cpp
 	$(CXX) $(CXXFLAGS) -o $@ -c $^
 
-$(OBJDIR)	:
-	mkdir build
+clean	:
+	$(RM) $(OBJS)
 
-clean		:
-	$(RM) -r $(OBJDIR)
-
-fclean		: clean
+fclean	: clean
 	$(RM) $(NAME)
 
-re			: fclean all
+re		: fclean all
 
-.PHONY		: all clean fclean re
+.PHONY	: all clean fclean re

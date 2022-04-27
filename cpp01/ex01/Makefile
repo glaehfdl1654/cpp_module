@@ -6,13 +6,13 @@
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 22:44:18 by jaejeong          #+#    #+#              #
-#    Updated: 2022/04/25 12:38:36 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/04/27 18:38:59 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX			= c++
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98 -Iincludes
-NAME		= Zombie
+NAME		= zombie
 SRCNAME 	= main.cpp \
 			  Zombie.cpp \
 			  zombieHorde.cpp
