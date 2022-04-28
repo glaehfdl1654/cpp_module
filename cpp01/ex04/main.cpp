@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 18:39:08 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/27 21:38:06 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/04/28 14:01:36 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,13 @@ int	main(int argc, char *argv[])
 	std::fstream	fs_replace;
 	fs.open(filename, std::istream::in);
 	fs_replace.open(filenameReplace, std::istream::out);
-	if (!fs.is_open()) {
+	if (!fs.is_open())
+	{
 		std::cout << "No File Open Error";
 		return (0);
 	}
-	if (!fs_replace.is_open()) {
+	if (!fs_replace.is_open())
+	{
 		fs.close();
 		std::cout << "File_Replace Open Error";
 		return (0);
@@ -56,14 +58,18 @@ int	main(int argc, char *argv[])
 	std::string	find_to = argv[2];
 	std::string	replace_to = argv[3];
 	std::size_t	found_index;
-	while (getline(fs, line)) {
+	while (getline(fs, line))
+	{
 		found_index = 0;
-		while (true) {
+		while (true)
+		{
 			found_index = line.find(find_to);
-			if (found_index != std::string::npos) {
+			if (found_index != std::string::npos)
+			{
 				fs_replace << line.substr(0, found_index) + replace_to;
 				line = line.substr(found_index + find_to.length());
-			} else
+			}
+			else
 				break;
 		}
 		fs_replace << line << std::endl;
@@ -71,5 +77,4 @@ int	main(int argc, char *argv[])
 	fs.close();
 	fs_replace.close();
 	return (0);
-
 }
