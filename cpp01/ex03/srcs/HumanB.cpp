@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 17:16:35 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/27 19:54:02 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/04/28 18:15:43 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 HumanB::HumanB(std::string name) : name(name)
 {
-	
+	weapon = NULL;
 }
 
 HumanB::HumanB(Weapon &type) : weapon(&type)

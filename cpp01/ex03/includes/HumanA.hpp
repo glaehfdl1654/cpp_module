@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 14:37:01 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/27 17:37:38 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/04/28 18:12:54 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class HumanA
 {
 private:
-	Weapon	*weapon;
-	std::string	name;
+	const Weapon	&weapon;
+	std::string		name;
 public:
 	HumanA(Weapon &type);
 	HumanA(std::string name, Weapon &type);
@@ -27,7 +27,6 @@ public:
 
 	const std::string &getName() const;
 	void setName(const std::string name);
-	void setWeapon(Weapon &weapon);
 	void attack();
 };
 
