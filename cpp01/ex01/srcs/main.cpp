@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 22:44:21 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/25 12:42:55 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/04/28 17:36:49 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 int	main(void)
 {
-	Zombie	*zombies = ZombieHorde(5, "char");
+	Zombie	*zombies = zombieHorde(5, "char");
 
-	zombies[1].Announcement();
-	zombies[2].Announcement();
-	zombies[3].Announcement();
+	zombies[0].announcement();
+	zombies[1].announcement();
+	zombies[2].announcement();
 
 	delete []zombies;
 }

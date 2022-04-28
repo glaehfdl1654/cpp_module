@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 22:44:21 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/22 08:47:56 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/04/28 17:36:47 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 
 int	main(void)
 {
+	randomChump("charlie0");
 	Zombie	zombie1("charlie1");
-	Zombie	*zombie2 = NewZombie("charlie2");
+	Zombie	*zombie2 = newZombie("charlie2");
 
-	zombie1.Announcement();
-	zombie2->Announcement();
+	zombie1.announcement();
+	zombie2->announcement();
 	
-	RandomChump("charlie3");
+	randomChump("charlie3");
 
 	delete zombie2;
 }
