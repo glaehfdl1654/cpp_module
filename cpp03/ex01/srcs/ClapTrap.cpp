@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 03:14:30 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/28 20:49:12 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/04/30 22:19:31 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,20 @@ void	ClapTrap::attack(const std::string &target)
 		std::cout << name << " can not move." << std::endl;
 		return ;
 	}
-	std::cout << name << " attack " << target << std::endl
+	std::cout << "ClapTrap " << name << " attacks " << target
+	<< ", causing " << attackDamage << " points of damage!" << std::endl
 	<< "energe points : " << energePoints << " -> " << energePoints - 1 << std::endl;
 	energePoints--;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
+	unsigned int	afterPoints = 0;
+	if (hitPoints > amount)
+		afterPoints = hitPoints - amount;
 	std::cout << name << " take damage" << std::endl
-	<< "hit points : " << hitPoints << " -> " << hitPoints - (int)amount << std::endl;
-	hitPoints -= (int)amount;
+	<< "hit points : " << hitPoints << " -> " << afterPoints << std::endl;
+	hitPoints = afterPoints;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -80,7 +84,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	<< "hit points : " << hitPoints << " -> " << hitPoints + (int)amount << std::endl
 	<< "energe points : " << energePoints << " -> " << energePoints - 1 << std::endl;
 	energePoints--;
-	hitPoints += (int)amount;
+	hitPoints += amount;
 }
 
 std::string	ClapTrap::getName()
