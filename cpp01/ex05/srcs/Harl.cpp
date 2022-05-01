@@ -6,12 +6,21 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 14:50:23 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/28 17:04:44 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/01 15:02:51 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 #include <iostream>
+
+Harl::Harl()
+{
+	
+}
+Harl::~Harl()
+{
+	
+}
 
 void	Harl::debug(void)
 {

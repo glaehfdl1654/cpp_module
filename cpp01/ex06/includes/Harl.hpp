@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 14:46:49 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/28 15:40:59 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/01 15:03:12 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ private :
 	void	warning(void);
 	void	error(void);
 public :
-	Harl() {};
-	~Harl() {};
+	Harl();
+	~Harl();
 	void	complain(std::string level);
 	void	(Harl::*f[4])(void);
 };
