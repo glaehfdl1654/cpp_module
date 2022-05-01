@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 03:16:29 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/28 20:49:56 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/04/30 22:20:24 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ int	main(void)
 	std::cout << std::endl;
 
 	a.setAttackDamage(5);
+	a.attack("b");
+	b.takeDamage(a.getAttackDamage());
+	a.attack("b");
+	b.takeDamage(a.getAttackDamage());
 	a.attack("b");
 	b.takeDamage(a.getAttackDamage());
 	a.attack("b");
