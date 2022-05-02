@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 14:48:42 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/28 18:13:28 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/03 02:07:27 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ HumanA::~HumanA()
 
 }
 
-const std::string &HumanA::getName() const
+std::string HumanA::getName() const
 {
 	return (name);
 }

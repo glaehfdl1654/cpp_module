@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 14:37:25 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/28 18:14:46 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/03 02:07:11 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ public:
 	HumanB(std::string name, Weapon &weapon);
 	~HumanB();
 
-	const std::string &getName() const;
-	void setName(const std::string name);
-	void setWeapon(Weapon &weapon);
-	void attack();
+	std::string	getName() const;
+	void	setName(const std::string name);
+	void	setWeapon(Weapon &weapon);
+	void	attack();
 };
 
 #endif

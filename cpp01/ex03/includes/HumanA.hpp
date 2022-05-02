@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 14:37:01 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/28 18:12:54 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/03 02:07:18 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ public:
 	HumanA(std::string name, Weapon &type);
 	~HumanA();
 
-	const std::string &getName() const;
-	void setName(const std::string name);
-	void attack();
+	std::string	getName() const;
+	void	setName(const std::string name);
+	void	attack();
 };
 
 #endif
