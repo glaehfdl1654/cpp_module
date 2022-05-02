@@ -6,7 +6,7 @@
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 02:26:31 by jaejeong          #+#    #+#              #
-#    Updated: 2022/04/26 02:27:26 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/05/03 02:02:26 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,10 @@ NAME	= brain
 SRCS	= main.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
-all		: $(NAME)
-
 $(NAME)	: $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
+
+all		: $(NAME)
 
 %.o		: %.cpp
 	$(CXX) $(CXXFLAGS) -o $@ -c $^
