@@ -6,7 +6,7 @@
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 03:10:03 by jaejeong          #+#    #+#              #
-#    Updated: 2022/05/02 18:29:53 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/05/02 21:51:45 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ CXXFLAGS	= -Wall -Werror -Wextra -std=c++98 -Iincludes
 NAME		= FragTrap
 SRCNAME 	= main.cpp \
 			  ClapTrap.cpp \
+			  ScavTrap.cpp \
 			  FragTrap.cpp
 SRCS		= $(addprefix $(SRCDIR)/, $(SRCNAME))
 SRCDIR		= srcs

@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 03:16:29 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/02 18:33:29 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/02 22:08:57 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(void)
 	FragTrap	b("b");
 	FragTrap	c = b; std::cout << std::endl;
 
+	c.setName("c");
 	c.attack(b.getName()); std::cout << std::endl;
 	a.takeDamage(c.getAttackDamage()); std::cout << std::endl;
 	c.attack(b.getName()); std::cout << std::endl;

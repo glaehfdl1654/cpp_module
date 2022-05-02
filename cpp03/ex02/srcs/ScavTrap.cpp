@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:51:49 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/02 21:44:34 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/02 22:10:59 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
-	std::cout << "ScavTrap " << name << " : copy constructor called" << std::endl;
 	*this = other;
+	std::cout << "ScavTrap " << name << " : copy constructor called" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)

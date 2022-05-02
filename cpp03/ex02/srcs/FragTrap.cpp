@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:51:49 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/02 21:34:48 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/02 22:10:56 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
 {
-	std::cout << "FragTrap " << name << " : copy constructor called" << std::endl;
 	*this = other;
+	std::cout << "FragTrap " << name << " : copy constructor called" << std::endl;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& rhs)
