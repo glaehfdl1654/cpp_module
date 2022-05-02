@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 22:44:10 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/28 17:15:21 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/02 22:34:52 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ private :
 public :
 	Zombie(std::string name = "default");
 	~Zombie(void);
-	void	announcement(void) const;
+	void	announce(void) const;
 };
 
-void	randomChump(const std::string name);
-Zombie* newZombie(const std::string name);
+void	randomChump(std::string name);
+Zombie* newZombie(std::string name);

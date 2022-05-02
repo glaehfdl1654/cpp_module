@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 14:50:23 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/01 15:02:51 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/02 22:37:33 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,10 @@ void	Harl::complain(std::string level)
 	for (int i = 0; i < 4; i++)
 	{
 		if (level == check[i])
+		{
 			(this->*f[i])();
+			return ;
+		}
 	}
+	std::cout << "Not found." << std::endl;
 }

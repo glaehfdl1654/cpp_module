@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 22:44:28 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/28 17:17:48 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/02 22:33:39 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	Zombie::setName(std::string name)
 	this->name = name;
 }
 
-void	Zombie::announcement(void) const
+void	Zombie::announce(void) const
 {
 	cout << name << ": BraiiiiiiinnnzzzZ..." << endl;
 }

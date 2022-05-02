@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 14:36:16 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/28 17:37:30 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/02 22:31:22 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(void)
 	harl.complain("INFO");
 	harl.complain("WARNING");
 	harl.complain("ERROR");
+	harl.complain("HELLO");
 
 	return (0);
 }
