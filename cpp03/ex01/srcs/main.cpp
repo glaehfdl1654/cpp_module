@@ -6,48 +6,26 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 03:16:29 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/30 22:20:24 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/02 18:10:04 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 #include <iostream>
 
 int	main(void)
 {
-	ClapTrap	a("a");
-	ClapTrap	b("b");
-	ClapTrap	c("c");
-	std::cout << std::endl;
+	ScavTrap	a("a");
+	ScavTrap	b("b");
+	ScavTrap	c = b;
 
-	a.attack("b");
-	b.takeDamage(a.getAttackDamage());
-	std::cout << std::endl;
-
-	b.attack("a");
-	a.takeDamage(b.getAttackDamage());
-	std::cout << std::endl;
-
-	c.attack("b");
+	c.attack(b.getName());
+	a.takeDamage(c.getAttackDamage());
+	c.attack(b.getName());
 	b.takeDamage(c.getAttackDamage());
-	std::cout << std::endl;
+	b.beRepaired(3);
 
-	a.beRepaired(25);
-	std::cout << std::endl;
-
-	a.setAttackDamage(5);
-	a.attack("b");
-	b.takeDamage(a.getAttackDamage());
-	a.attack("b");
-	b.takeDamage(a.getAttackDamage());
-	a.attack("b");
-	b.takeDamage(a.getAttackDamage());
-	a.attack("b");
-	b.takeDamage(a.getAttackDamage());
-	std::cout << std::endl;
-
-	b.attack("a");
-	std::cout << std::endl;
+	c.guardGate();
 
 	return (0);
 }

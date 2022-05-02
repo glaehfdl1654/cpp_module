@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 03:14:30 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/30 22:19:31 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/02 15:27:48 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "default" << " : constructor called" << std::endl;
+	std::cout << "ClapTrap " << "default" << " : constructor called" << std::endl;
 	name = "default";
 	hitPoints = 10;
 	energePoints = 10;
@@ -24,7 +24,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(const std::string &name) : name(name)
 {
-	std::cout << name << " : constructor called" << std::endl;
+	std::cout << "ClapTrap " << name << " : constructor called" << std::endl;
 	hitPoints = 10;
 	energePoints = 10;
 	attackDamage = 0;
@@ -32,7 +32,7 @@ ClapTrap::ClapTrap(const std::string &name) : name(name)
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
-	std::cout << name << " : copy constructor called" << std::endl;
+	std::cout << "ClapTrap " << name << " : copy constructor called" << std::endl;
 	*this = other;
 }
 
@@ -47,7 +47,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& rhs)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << name << " : destructor called" << std::endl;
+	std::cout << "ClapTrap " << name << " : destructor called" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string &target)
@@ -68,7 +68,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	unsigned int	afterPoints = 0;
 	if (hitPoints > amount)
 		afterPoints = hitPoints - amount;
-	std::cout << name << " take damage" << std::endl
+	std::cout << "ClapTrap " << name << " take damage" << std::endl
 	<< "hit points : " << hitPoints << " -> " << afterPoints << std::endl;
 	hitPoints = afterPoints;
 }
@@ -80,7 +80,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << name << " can not move." << std::endl;
 		return ;
 	}
-	std::cout << name << " is repaired." << std::endl
+	std::cout << "ClapTrap " << name << " is repaired." << std::endl
 	<< "hit points : " << hitPoints << " -> " << hitPoints + (int)amount << std::endl
 	<< "energe points : " << energePoints << " -> " << energePoints - 1 << std::endl;
 	energePoints--;

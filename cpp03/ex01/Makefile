@@ -6,15 +6,16 @@
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 03:10:03 by jaejeong          #+#    #+#              #
-#    Updated: 2022/04/26 03:10:32 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/05/02 17:52:52 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX			= c++
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98 -Iincludes
-NAME		= ClapTrap
+NAME		= ScavTrap
 SRCNAME 	= main.cpp \
-			  ClapTrap.cpp
+			  ClapTrap.cpp \
+			  ScavTrap.cpp
 SRCS		= $(addprefix $(SRCDIR)/, $(SRCNAME))
 SRCDIR		= srcs
 OBJS		= $(addprefix $(OBJDIR)/, $(SRCNAME:.cpp=.o))
