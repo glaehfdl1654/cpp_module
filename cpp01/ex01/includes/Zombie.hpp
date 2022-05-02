@@ -6,9 +6,12 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 22:44:10 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/02 22:35:28 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/03 02:04:05 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 #include <string>
 
@@ -24,3 +27,5 @@ public :
 };
 
 Zombie* zombieHorde(int n, std::string name);
+
+#endif
