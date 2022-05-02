@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 03:11:02 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/30 22:10:14 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/02 21:28:32 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ClapTrap
 private: 
 	std::string	name;
 	unsigned int	hitPoints;
-	unsigned int	energePoints;
+	unsigned int	energyPoints;
 	unsigned int	attackDamage;
 public:
 	ClapTrap();
@@ -38,7 +38,7 @@ public:
 	int		getAttackDamage();
 	void	setName(std::string name);
 	void	setHitPoints(int hitPoints);
-	void	setEnergePoints(int energePoints);
+	void	setEnergyPoints(int energyPoints);
 	void	setAttackDamage(int attackDamage);
 };
 
