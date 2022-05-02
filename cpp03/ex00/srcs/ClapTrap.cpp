@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 03:14:30 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/02 21:28:32 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/02 21:38:41 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		return ;
 	}
 	std::cout << "ClapTrap " << name << " is repaired." << std::endl
-	<< "hit points : " << hitPoints << " -> " << hitPoints + (int)amount << std::endl
+	<< "hit points : " << hitPoints << " -> " << hitPoints + amount << std::endl
 	<< "energe points : " << energyPoints << " -> " << energyPoints - 1 << std::endl;
 	energyPoints--;
 	hitPoints += amount;
