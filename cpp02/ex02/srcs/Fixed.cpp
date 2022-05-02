@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 23:38:36 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 02:47:53 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/03 04:27:29 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ Fixed::Fixed(const int num)
 Fixed::Fixed(const float num)
 {
 	// std::cout << "Float constructor called" << std::endl;
-	fixedInt = roundf(num * 256);
+	const int scalingFactor = (1 << fractionalBit);
+	fixedInt = roundf(num * scalingFactor);
 }
 
 Fixed::Fixed(const Fixed& other)
@@ -40,23 +41,23 @@ Fixed::~Fixed()
 	// std::cout << "Destructor called" << std::endl;
 }
 
-Fixed &Fixed::operator=(const Fixed &another)
+Fixed &Fixed::operator=(const Fixed &rhs)
 {
-	fixedInt = another.fixedInt;
+	fixedInt = rhs.fixedInt;
 	return (*this);
 }
 
 const Fixed Fixed::operator+(Fixed const &another) const
 {
 	Fixed tmp = *this;
-	tmp.fixedInt += another.fixedInt / 256.0f;
+	tmp.fixedInt += another.fixedInt;
 	return (tmp);
 }
 
 const Fixed Fixed::operator-(Fixed const &another) const
 {
 	Fixed tmp = *this;
-	tmp.fixedInt -= another.fixedInt / 256.0f;
+	tmp.fixedInt -= another.fixedInt;
 	return (tmp);
 }
 

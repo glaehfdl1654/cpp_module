@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 23:37:49 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/26 02:15:35 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/03 03:51:04 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ private :
 	static const int	fractionalBit = 8;
 public :
 	Fixed();
-	Fixed(const Fixed &fixed);
 	Fixed(const int num);
 	Fixed(const float floating_num);
+	Fixed(const Fixed &other);
+	Fixed &operator=(const Fixed &rhs);
 	~Fixed();
-	Fixed &operator=(const Fixed &another);
 
 	const Fixed operator+(Fixed const &another) const;
 	const Fixed operator-(Fixed const &another) const;
@@ -40,10 +40,10 @@ public :
 	bool	operator<=(Fixed const &another) const;
 	bool	operator==(Fixed const &another) const;
 	bool	operator!=(Fixed const &another) const;
-	Fixed &operator++();
-	Fixed &operator--();
-	const Fixed operator++(int);
-	const Fixed operator--(int);
+	Fixed	&operator++();
+	Fixed	&operator--();
+	const	Fixed operator++(int);
+	const	Fixed operator--(int);
 
 	static Fixed& min(Fixed& a1, Fixed& a2);
 	static const Fixed& min(const Fixed& a1, const Fixed& a2);

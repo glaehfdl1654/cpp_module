@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 21:49:43 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 02:47:18 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/03 03:48:36 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ Fixed::Fixed(const int num)
 Fixed::Fixed(const float num)
 {
 	std::cout << "Float constructor called" << std::endl;
-	fixedInt = roundf(num * 256);
+	const int scalingFactor = (1 << fractionalBit);
+	fixedInt = roundf(num * scalingFactor);
 }
 
 Fixed::Fixed(const Fixed& other)
