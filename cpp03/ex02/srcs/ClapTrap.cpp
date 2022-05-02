@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 03:14:30 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/02 21:39:07 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/02 21:44:39 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ClapTrap::attack(const std::string &target)
 	}
 	std::cout << "ClapTrap " << name << " attacks " << target
 	<< ", causing " << attackDamage << " points of damage!" << std::endl
-	<< "energe points : " << energyPoints << " -> " << energyPoints - 1 << std::endl;
+	<< "energy points : " << energyPoints << " -> " << energyPoints - 1 << std::endl;
 	energyPoints--;
 }
 
@@ -83,7 +83,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}
 	std::cout << "ClapTrap " << name << " is repaired." << std::endl
 	<< "hit points : " << hitPoints << " -> " << hitPoints + amount << std::endl
-	<< "energe points : " << energyPoints << " -> " << energyPoints - 1 << std::endl;
+	<< "energy points : " << energyPoints << " -> " << energyPoints - 1 << std::endl;
 	energyPoints--;
 	hitPoints += amount;
 }
@@ -98,7 +98,7 @@ int		ClapTrap::getHitPoints()
 	return (hitPoints);
 }
 
-int		ClapTrap::getEnergePoints()
+int		ClapTrap::getEnergyPoints()
 {
 	return (energyPoints);
 }

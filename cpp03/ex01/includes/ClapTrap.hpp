@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 03:11:02 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/02 21:34:18 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/02 21:42:48 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 
 	std::string	getName();
 	int		getHitPoints();
-	int		getEnergePoints();
+	int		getEnergyPoints();
 	int		getAttackDamage();
 	void	setName(std::string name);
 	void	setHitPoints(int hitPoints);
