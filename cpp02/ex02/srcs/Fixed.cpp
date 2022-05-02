@@ -6,14 +6,13 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 23:38:36 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/26 02:18:23 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/03 02:47:53 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
-	: fixedInt(0)
+Fixed::Fixed() : fixedInt(0)
 {
 	// std::cout << "Default constructor called" << std::endl;
 }

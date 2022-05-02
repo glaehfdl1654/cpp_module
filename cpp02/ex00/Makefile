@@ -6,7 +6,7 @@
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/25 20:42:29 by jaejeong          #+#    #+#              #
-#    Updated: 2022/04/25 21:30:52 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/05/03 02:49:04 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,10 @@ SRCDIR		= srcs
 OBJS		= $(addprefix $(OBJDIR)/, $(SRCNAME:.cpp=.o))
 OBJDIR		= build
 
-all			: $(NAME)
-
 $(NAME)		: $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
+
+all			: $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
 	$(CXX) $(CXXFLAGS) -o $@ -c $^

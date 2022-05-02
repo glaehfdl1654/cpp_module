@@ -6,12 +6,12 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 20:42:37 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/25 22:16:17 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/03 02:42:56 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FIXED_H__
-# define _FIXED_H__
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 class Fixed
 {

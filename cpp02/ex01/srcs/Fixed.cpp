@@ -6,15 +6,14 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 21:49:43 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/04/26 01:29:34 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/03 02:47:18 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <cmath>
 
-Fixed::Fixed()
-	: fixedInt(0)
+Fixed::Fixed() : fixedInt(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
