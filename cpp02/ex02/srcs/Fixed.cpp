@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 23:38:36 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 04:27:29 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/03 09:59:25 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,7 +164,8 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return (fixedInt / 256.0f);
+	const int scalingFactor = (1 << fractionalBit);
+	return (static_cast<float>(fixedInt) / scalingFactor);
 }
 
 int	Fixed::toInt(void) const
@@ -174,6 +175,6 @@ int	Fixed::toInt(void) const
 
 std::ostream& operator<<(std::ostream& os, const Fixed &num)
 {
-	os << num.getRawBits() / 256.0f;
+	os << num.toFloat();;
 	return os;
 }
