@@ -6,26 +6,28 @@
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 03:10:03 by jaejeong          #+#    #+#              #
-#    Updated: 2022/05/02 21:51:45 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/05/03 15:09:25 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX			= c++
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98 -Iincludes
-NAME		= FragTrap
+NAME		= Polymorphism
 SRCNAME 	= main.cpp \
-			  ClapTrap.cpp \
-			  ScavTrap.cpp \
-			  FragTrap.cpp
+			  Animal.cpp \
+			  Cat.cpp \
+			  Dog.cpp \
+			  WrongAnimal.cpp \
+			  WrongCat.cpp
 SRCS		= $(addprefix $(SRCDIR)/, $(SRCNAME))
 SRCDIR		= srcs
 OBJS		= $(addprefix $(OBJDIR)/, $(SRCNAME:.cpp=.o))
 OBJDIR		= build
 
-all			: $(NAME)
-
 $(NAME)		: $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
+
+all			: $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
 	$(CXX) $(CXXFLAGS) -o $@ -c $^
