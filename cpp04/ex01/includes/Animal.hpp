@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 22:44:21 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 14:07:55 by jaejeong         ###   ########.fr       */
+/*   Created: 2022/05/03 11:02:09 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/05/03 15:07:21 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-void	randomChump(std::string name);
-Zombie* newZombie(std::string name);
+# include <string>
 
-int	main(void)
+class Animal
 {
-	randomChump("charlie0");
-	Zombie	zombie1("charlie1");
-	Zombie	*zombie2 = newZombie("charlie2");
+protected:
+	std::string	type;
+public:
+	Animal(std::string type = "Unknown");
+	Animal(const Animal& other);
+	Animal& operator=(const Animal& rhs);
+	virtual ~Animal();
 
-	zombie1.announce();
-	zombie2->announce();
-	
-	randomChump("charlie3");
+	std::string		getType(void) const;
+	virtual void	makeSound(void) const;
+};
 
-	delete zombie2;
-}
+#endif

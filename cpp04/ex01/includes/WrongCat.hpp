@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 22:44:21 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 14:07:55 by jaejeong         ###   ########.fr       */
+/*   Created: 2022/05/03 12:42:24 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/05/03 14:39:39 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-void	randomChump(std::string name);
-Zombie* newZombie(std::string name);
+#include "WrongAnimal.hpp"
 
-int	main(void)
+class WrongCat : public WrongAnimal
 {
-	randomChump("charlie0");
-	Zombie	zombie1("charlie1");
-	Zombie	*zombie2 = newZombie("charlie2");
+public:
+	WrongCat();
+	WrongCat(const WrongCat& other);
+	WrongCat& operator=(const WrongCat& rhs);
+	~WrongCat();
 
-	zombie1.announce();
-	zombie2->announce();
-	
-	randomChump("charlie3");
+	void	makeSound(void) const;
+};
 
-	delete zombie2;
-}
+#endif

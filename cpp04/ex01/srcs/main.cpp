@@ -5,27 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 22:44:21 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 14:07:55 by jaejeong         ###   ########.fr       */
+/*   Created: 2022/05/03 11:04:24 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/05/03 17:15:59 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 #include <iostream>
-#include "Zombie.hpp"
 
-void	randomChump(std::string name);
-Zombie* newZombie(std::string name);
-
-int	main(void)
+int main()
 {
-	randomChump("charlie0");
-	Zombie	zombie1("charlie1");
-	Zombie	*zombie2 = newZombie("charlie2");
+const Animal* j = new Dog();
+const Animal* i = new Cat();
+delete j;//should not create a leak
+delete i;
 
-	zombie1.announce();
-	zombie2->announce();
-	
-	randomChump("charlie3");
-
-	delete zombie2;
+return 0;
 }

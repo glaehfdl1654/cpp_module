@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 22:44:21 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 14:07:55 by jaejeong         ###   ########.fr       */
+/*   Created: 2022/05/03 12:42:13 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/05/03 15:07:43 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-void	randomChump(std::string name);
-Zombie* newZombie(std::string name);
+# include <string>
 
-int	main(void)
+class WrongAnimal
 {
-	randomChump("charlie0");
-	Zombie	zombie1("charlie1");
-	Zombie	*zombie2 = newZombie("charlie2");
+protected:
+	std::string	type;
+public:
+	WrongAnimal(std::string type = "Unknown");
+	WrongAnimal(const WrongAnimal& other);
+	WrongAnimal& operator=(const WrongAnimal& rhs);
+	~WrongAnimal();
 
-	zombie1.announce();
-	zombie2->announce();
-	
-	randomChump("charlie3");
+	std::string		getType(void) const;
+	void	makeSound(void) const;
+};
 
-	delete zombie2;
-}
+#endif

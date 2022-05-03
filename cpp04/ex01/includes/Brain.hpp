@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 22:44:21 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 14:07:55 by jaejeong         ###   ########.fr       */
+/*   Created: 2022/05/03 15:20:18 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/05/03 17:36:53 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-void	randomChump(std::string name);
-Zombie* newZombie(std::string name);
+# include <string>
 
-int	main(void)
+class Brain
 {
-	randomChump("charlie0");
-	Zombie	zombie1("charlie1");
-	Zombie	*zombie2 = newZombie("charlie2");
+private:
+	std::string	idea[100];
+public:
+	Brain();
+	Brain(const Brain& other);
+	Brain& operator=(const Brain& rhs);
+	~Brain();
 
-	zombie1.announce();
-	zombie2->announce();
-	
-	randomChump("charlie3");
+	void	setIdea(int index, const std::string &newIdea);
+	std::string	getIdea(int index) const;
+};
 
-	delete zombie2;
-}
+#endif
