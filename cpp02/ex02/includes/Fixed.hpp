@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 23:37:49 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 10:01:29 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/04 21:47:26 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ public :
 	bool	operator<=(Fixed const &another) const;
 	bool	operator==(Fixed const &another) const;
 	bool	operator!=(Fixed const &another) const;
+
 	Fixed	&operator++();
 	Fixed	&operator--();
 	const	Fixed operator++(int);
@@ -49,6 +50,7 @@ public :
 	static const Fixed& min(const Fixed& a1, const Fixed& a2);
 	static Fixed& max(Fixed& a1, Fixed& a2);
 	static const Fixed& max(const Fixed& a1, const Fixed& a2);
+
 	float	toFloat() const;
 	int		toInt() const;
 	int		getRawBits() const;

@@ -6,7 +6,7 @@
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/25 20:42:29 by jaejeong          #+#    #+#              #
-#    Updated: 2022/05/03 02:49:04 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/05/04 21:20:41 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,13 +23,13 @@ OBJDIR		= build
 $(NAME)		: $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-all			: $(NAME)
-
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
 	$(CXX) $(CXXFLAGS) -o $@ -c $^
 
 $(OBJDIR)	:
 	mkdir build
+
+all			: $(NAME)
 
 clean		:
 	$(RM) -r $(OBJDIR)
