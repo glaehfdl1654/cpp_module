@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 23:38:34 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/04 22:09:41 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/04 22:27:07 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,18 @@ int main(void)
 
 	std::cout << "\n";
 
+	std::cout << a << std::endl;
+	std::cout << --a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a-- << std::endl;
+	std::cout << a << std::endl;
+	std::cout << Fixed::min(a, b) << std::endl;
+	
+	std::cout << "\n";
+
 	Fixed	c(10);
 	Fixed	d(2.5f);
-
-	std::cout << Fixed::min (c, d) << std::endl;
+	
 	std::cout << (c > d) << std::endl;
 	std::cout << (c < d) << std::endl;
 	std::cout << (c >= d) << std::endl;
