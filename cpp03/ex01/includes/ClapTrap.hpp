@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 03:11:02 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/02 21:59:46 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:09:04 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@ class ClapTrap
 private:
 protected:
 	std::string		name;
+	std::string 	trapType;
 	unsigned int	hitPoints;
 	unsigned int	energyPoints;
 	unsigned int	attackDamage;
 public:
 	ClapTrap();
 	ClapTrap(const std::string &name);
-	ClapTrap(const ClapTrap& other);
-	ClapTrap& operator=(const ClapTrap& rhs);
+	ClapTrap(const ClapTrap &other);
+	ClapTrap& operator=(const ClapTrap &rhs);
 	~ClapTrap();
 	void	attack(const std::string &target);
 	void	takeDamage(unsigned int amount);

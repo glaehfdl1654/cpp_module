@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:50:54 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/02 21:59:02 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:09:18 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ private:
 public:
 	ScavTrap();
 	ScavTrap(const std::string &name);
-	ScavTrap(const ScavTrap& other);
-	ScavTrap& operator=(const ScavTrap& rhs);
+	ScavTrap(const ScavTrap &other);
+	ScavTrap &operator=(const ScavTrap &rhs);
 	~ScavTrap();
 	void	attack(const std::string &target);
 	void	guardGate(void);

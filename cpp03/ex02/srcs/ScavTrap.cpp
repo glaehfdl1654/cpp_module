@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:51:49 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/05 13:27:43 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:05:26 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "ScavTrap : constructor called" << std::endl;
 	name = "default";
+	trapType = "ScavTrap";
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
@@ -25,20 +26,22 @@ ScavTrap::ScavTrap() : ClapTrap()
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
 	std::cout << "ScavTrap : constructor called" << std::endl;
+	trapType = "ScavTrap";
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
 	*this = other;
 	std::cout << "ScavTrap : copy constructor called" << std::endl;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
+ScavTrap& ScavTrap::operator=(const ScavTrap &rhs)
 {
 	name = rhs.name;
+	trapType = rhs.trapType;
 	hitPoints = rhs.hitPoints;
 	energyPoints = rhs.energyPoints;
 	attackDamage = rhs.attackDamage;
@@ -57,9 +60,9 @@ void	ScavTrap::attack(const std::string &target)
 		std::cout << name << " can not move." << std::endl;
 		return ;
 	}
-	std::cout << "ScavTrap " << name << " attacks " << target
-	<< ", causing " << attackDamage << " points of damage!" << std::endl
-	<< "energy points : " << energyPoints << " -> " << energyPoints - 1 << std::endl;
+	std::cout << trapType << " " << name << " attacks " << target
+			  << ", causing " << attackDamage << " points of damage!" << std::endl
+			  << "energy points : " << energyPoints << " -> " << energyPoints - 1 << std::endl;
 	energyPoints--;
 }
 
