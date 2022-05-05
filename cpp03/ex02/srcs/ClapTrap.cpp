@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 03:14:30 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/02 22:10:54 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/05 13:27:14 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "ClapTrap " << "default" << " : constructor called" << std::endl;
+	std::cout << "ClapTrap : constructor called" << std::endl;
 	name = "default";
 	hitPoints = 10;
 	energyPoints = 10;
@@ -24,7 +24,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(const std::string &name) : name(name)
 {
-	std::cout << "ClapTrap " << name << " : constructor called" << std::endl;
+	std::cout << "ClapTrap : constructor called" << std::endl;
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
@@ -33,7 +33,7 @@ ClapTrap::ClapTrap(const std::string &name) : name(name)
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
 	*this = other;
-	std::cout << "ClapTrap " << name << " : copy constructor called" << std::endl;
+	std::cout << "ClapTrap : copy constructor called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& rhs)
@@ -47,7 +47,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& rhs)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << name << " : destructor called" << std::endl;
+	std::cout << "ClapTrap : destructor called" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string &target)
