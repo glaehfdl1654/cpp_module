@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 23:38:36 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 09:59:25 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/05 10:14:17 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Fixed::Fixed(const float num)
 {
 	// std::cout << "Float constructor called" << std::endl;
 	const int scalingFactor = (1 << fractionalBit);
-	fixedInt = roundf(num * scalingFactor);
+	fixedInt = static_cast<int>(roundf(num * scalingFactor));
 }
 
 Fixed::Fixed(const Fixed& other)
@@ -47,62 +47,62 @@ Fixed &Fixed::operator=(const Fixed &rhs)
 	return (*this);
 }
 
-const Fixed Fixed::operator+(Fixed const &another) const
+const Fixed Fixed::operator+(Fixed const &rhs) const
 {
 	Fixed tmp = *this;
-	tmp.fixedInt += another.fixedInt;
+	tmp.fixedInt += rhs.fixedInt;
 	return (tmp);
 }
 
-const Fixed Fixed::operator-(Fixed const &another) const
+const Fixed Fixed::operator-(Fixed const &rhs) const
 {
 	Fixed tmp = *this;
-	tmp.fixedInt -= another.fixedInt;
+	tmp.fixedInt -= rhs.fixedInt;
 	return (tmp);
 }
 
-const Fixed Fixed::operator*(Fixed const &another) const
+const Fixed Fixed::operator*(Fixed const &rhs) const
 {
 	Fixed tmp = *this;
-	tmp.fixedInt *= another.fixedInt / 256.0f;
+	tmp.fixedInt *= rhs.fixedInt / 256.0f;
 	return (tmp);
 }
 
-const Fixed Fixed::operator/(Fixed const &another) const
+const Fixed Fixed::operator/(Fixed const &rhs) const
 {
 	Fixed tmp = *this;
-	tmp.fixedInt /= another.fixedInt / 256.0f;
+	tmp.fixedInt /= rhs.fixedInt / 256.0f;
 	return (tmp);
 }
 
-bool	Fixed::operator>(Fixed const &another) const
+bool	Fixed::operator>(Fixed const &rhs) const
 {
-	return (fixedInt > another.fixedInt);
+	return (fixedInt > rhs.fixedInt);
 }
 
-bool	Fixed::operator<(Fixed const &another) const
+bool	Fixed::operator<(Fixed const &rhs) const
 {
-	return (fixedInt < another.fixedInt);
+	return (fixedInt < rhs.fixedInt);
 }
 
-bool	Fixed::operator>=(Fixed const &another) const
+bool	Fixed::operator>=(Fixed const &rhs) const
 {
-	return (fixedInt >= another.fixedInt);
+	return (fixedInt >= rhs.fixedInt);
 }
 
-bool	Fixed::operator<=(Fixed const &another) const
+bool	Fixed::operator<=(Fixed const &rhs) const
 {
-	return (fixedInt <= another.fixedInt);
+	return (fixedInt <= rhs.fixedInt);
 }
 
-bool	Fixed::operator==(Fixed const &another) const
+bool	Fixed::operator==(Fixed const &rhs) const
 {
-	return (fixedInt == another.fixedInt);
+	return (fixedInt == rhs.fixedInt);
 }
 
-bool	Fixed::operator!=(Fixed const &another) const
+bool	Fixed::operator!=(Fixed const &rhs) const
 {
-	return (fixedInt != another.fixedInt);
+	return (fixedInt != rhs.fixedInt);
 }
 
 Fixed	&Fixed::operator++()

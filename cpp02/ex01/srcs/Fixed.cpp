@@ -6,12 +6,11 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 21:49:43 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 10:00:06 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/05 10:21:07 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <cmath>
 
 Fixed::Fixed() : fixedInt(0)
 {
@@ -28,7 +27,7 @@ Fixed::Fixed(const float num)
 {
 	std::cout << "Float constructor called" << std::endl;
 	const int scalingFactor = (1 << fractionalBit);
-	fixedInt = roundf(num * scalingFactor);
+	fixedInt = static_cast<int>(roundf(num * scalingFactor));
 }
 
 Fixed::Fixed(const Fixed& other)
@@ -42,7 +41,7 @@ Fixed& Fixed::operator=(const Fixed& rhs)
 	fixedInt = rhs.getRawBits();
 	std::cout << "Copy assignment operator called" << std::endl;
 	return (*this);
-}
+}	
 
 Fixed::~Fixed()
 {

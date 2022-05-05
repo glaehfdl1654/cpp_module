@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 23:37:49 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/04 21:47:26 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/05 10:13:14 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,17 @@ public :
 	Fixed &operator=(const Fixed &rhs);
 	~Fixed();
 
-	const Fixed operator+(Fixed const &another) const;
-	const Fixed operator-(Fixed const &another) const;
-	const Fixed operator*(Fixed const &another) const;
-	const Fixed operator/(Fixed const &another) const;
+	const Fixed operator+(Fixed const &rhs) const;
+	const Fixed operator-(Fixed const &rhs) const;
+	const Fixed operator*(Fixed const &rhs) const;
+	const Fixed operator/(Fixed const &rhs) const;
 
-	bool	operator>(Fixed const &another) const;
-	bool	operator<(Fixed const &another) const;
-	bool	operator>=(Fixed const &another) const;
-	bool	operator<=(Fixed const &another) const;
-	bool	operator==(Fixed const &another) const;
-	bool	operator!=(Fixed const &another) const;
+	bool	operator>(Fixed const &rhs) const;
+	bool	operator<(Fixed const &rhs) const;
+	bool	operator>=(Fixed const &rhs) const;
+	bool	operator<=(Fixed const &rhs) const;
+	bool	operator==(Fixed const &rhs) const;
+	bool	operator!=(Fixed const &rhs) const;
 
 	Fixed	&operator++();
 	Fixed	&operator--();
