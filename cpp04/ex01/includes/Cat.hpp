@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:27:31 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/08 16:28:40 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/08 17:01:15 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ private:
 	Brain	*brain;
 public:
 	Cat();
+	Cat(const Brain &brain);
 	Cat(const Cat& other);
 	Cat& operator=(const Cat& rhs);
 	virtual ~Cat();

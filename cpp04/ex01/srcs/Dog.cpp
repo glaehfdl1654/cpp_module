@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:35:21 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/08 16:46:56 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/08 17:06:24 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,26 @@ Dog::Dog() : Animal()
 {
 	std::cout << "Dog Constructed" << std::endl;
 	type = "Dog";
-	brain = new Brain();
+	brain = NULL;
+}
+
+Dog::Dog(const Brain &brain)
+{
+	type = "Dog";
+	*(this->brain) = brain;
 }
 
 Dog::Dog(const Dog& other) : Animal(other)
 {
 	std::cout << "Dog Copy Constructed" << std::endl;
+	brain = new Brain();
 	*this = other;
 }
 
 Dog& Dog::operator=(const Dog& rhs)
 {
 	type = rhs.type;
-	for (int i = 0; i < 100; i++)
-		brain->setIdea(i, rhs.brain->getIdea(i));
+	*brain = *(rhs.brain);
 	return (*this);
 }
 
