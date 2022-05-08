@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:30:27 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/08 17:06:17 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 01:49:30 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ Cat::Cat() : Animal()
 	brain = NULL;
 }
 
-Cat::Cat(const Brain &brain)
+Cat::Cat(const Brain &brain) : Animal()
 {
+	std::cout << "Cat Constructed" << std::endl;
 	type = "Cat";
-	*(this->brain) = brain;
+	this->brain = NULL;
+	setBrain(brain);
 }
 
 Cat::Cat(const Cat& other) : Animal(other)
@@ -43,7 +45,8 @@ Cat& Cat::operator=(const Cat& rhs)
 Cat::~Cat()
 {
 	std::cout << "Cat Destructed" << std::endl;
-	delete brain;
+	if (brain)
+		delete brain;
 }
 
 void	Cat::makeSound(void) const
@@ -57,4 +60,15 @@ void	Cat::setBrain(const Brain &newBrain)
 		delete brain;
 	brain = new Brain();
 	*brain = newBrain;
+}
+
+void	Cat::speakIdea(int start, int end) const
+{
+	if (!(0 <= start && start < 100) || !((0 <= end && end < 100)) || !(start < end))
+	{
+		std::cout << "speakIdea : Wrong index is entered" << std::endl;
+		return ;
+	}
+	for (int i = start; i < end; i++)
+		std::cout << i << " : " << brain->getIdea(i) << std::endl;
 }

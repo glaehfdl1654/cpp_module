@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:35:21 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/08 17:06:24 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 01:49:22 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ Dog::Dog() : Animal()
 	brain = NULL;
 }
 
-Dog::Dog(const Brain &brain)
+Dog::Dog(const Brain &brain) : Animal()
 {
+	std::cout << "Dog Constructed" << std::endl;
 	type = "Dog";
-	*(this->brain) = brain;
+	this->brain = NULL;
+	setBrain(brain);
 }
 
 Dog::Dog(const Dog& other) : Animal(other)
@@ -43,7 +45,8 @@ Dog& Dog::operator=(const Dog& rhs)
 Dog::~Dog()
 {
 	std::cout << "Dog Destructed" << std::endl;
-	delete brain;
+	if (brain)
+		delete brain;
 }
 
 void	Dog::makeSound(void) const
@@ -57,4 +60,16 @@ void	Dog::setBrain(const Brain &newBrain)
 		delete brain;
 	brain = new Brain();
 	*brain = newBrain;
+}
+
+void	Dog::speakIdea(int start, int end) const
+{
+	if (!(0 <= start && start < 100) || !((0 <= end && end < 100)) || !(start < end))
+	{
+		std::cout << "speakIdea : Wrong index is entered" << std::endl;
+		return ;
+	}
+	std::cout << "awegawerg" << std::endl;
+	for (int i = start; i < end; i++)
+		std::cout << i << " : " << brain->getIdea(i) << std::endl;
 }

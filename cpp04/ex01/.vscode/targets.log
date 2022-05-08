@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May  8 15:37:52 2022
+# Make data base, printed on Mon May  9 01:51:35 2022
 
 # Variables
 
@@ -54,13 +54,12 @@ MAKE_HOST := x86_64-pc-linux-gnu
 PATH = /home/jaejeong/.vscode-server/bin/57fd6d0195bb9b9d1b49f6da5db789060795de47/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/dotnet/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Users/glaeh/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/glaeh/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/glaeh/.dotnet/tools
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
- 
 # environment
 XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-548614fc-c996-4b77-8c41-c628aa345746.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-1c8ef819-c4cd-49b0-a18d-b7ac46389d92.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -82,7 +81,7 @@ WSL_INTEROP = /run/WSL/8_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # environment
-WT_SESSION = c74c780e-689e-43e5-a4e2-f27e532a23dd
+WT_SESSION = 3d6efd06-b058-4498-b875-fa46a677e65a
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -90,7 +89,7 @@ HOME = /home/jaejeong
 # environment
 LOGNAME = jaejeong
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 ZSH = /home/jaejeong/.oh-my-zsh
 # environment
@@ -210,7 +209,7 @@ build/%.o: srcs/%.cpp | build
 build/main.o: srcs/main.cpp | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-05-08 15:37:42.924088465
+#  Last modified 2022-05-09 01:51:20.984013647
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 34):
@@ -219,7 +218,7 @@ build/main.o: srcs/main.cpp | build
 # Not a target:
 srcs/Animal.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-08 13:57:32.854087253
+#  Last modified 2022-05-09 01:31:55.294013412
 #  File has been updated.
 #  Successfully updated.
 
@@ -252,7 +251,7 @@ srcs/WrongCat.cpp:
 
 brain: build/main.o build/Animal.o build/Cat.o build/Dog.o build/WrongAnimal.o build/WrongCat.o build/Brain.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-08 15:37:43.704088465
+#  Last modified 2022-05-09 01:51:21.864013647
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 29):
@@ -261,13 +260,13 @@ brain: build/main.o build/Animal.o build/Cat.o build/Dog.o build/WrongAnimal.o b
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-08 15:37:41.344088464
+#  Last modified 2022-05-09 01:51:35.77401365
 #  File has been updated.
 #  Successfully updated.
 
 build:
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-08 15:37:43.584088465
+#  Last modified 2022-05-09 01:51:21.724013647
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 37):
@@ -276,7 +275,8 @@ build:
 build/Cat.o: srcs/Cat.cpp | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Cat'
-#  Last modified 2022-05-08 15:37:43.154088465
+ 
+#  Last modified 2022-05-09 01:51:21.234013647
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 34):
@@ -285,7 +285,7 @@ build/Cat.o: srcs/Cat.cpp | build
 # Not a target:
 srcs/Dog.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-08 14:39:53.464087765
+#  Last modified 2022-05-09 01:49:22.644013623
 #  File has been updated.
 #  Successfully updated.
 
@@ -300,14 +300,14 @@ fclean: clean
 # Not a target:
 srcs/main.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-08 15:35:56.994088443
+#  Last modified 2022-05-09 01:51:05.604013644
 #  File has been updated.
 #  Successfully updated.
 
 build/Brain.o: srcs/Brain.cpp | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Brain'
-#  Last modified 2022-05-08 15:37:43.584088465
+#  Last modified 2022-05-09 01:51:21.734013647
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 34):
@@ -328,7 +328,7 @@ re: fclean all
 build/Animal.o: srcs/Animal.cpp | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Animal'
-#  Last modified 2022-05-08 15:37:43.034088465
+#  Last modified 2022-05-09 01:51:21.104013647
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 34):
@@ -340,13 +340,12 @@ clean:
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 40):
- 
 	$(RM) -r $(OBJDIR)
 
 build/WrongAnimal.o: srcs/WrongAnimal.cpp | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'WrongAnimal'
-#  Last modified 2022-05-08 15:37:43.364088465
+#  Last modified 2022-05-09 01:51:21.484013647
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 34):
@@ -355,7 +354,7 @@ build/WrongAnimal.o: srcs/WrongAnimal.cpp | build
 build/WrongCat.o: srcs/WrongCat.cpp | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'WrongCat'
-#  Last modified 2022-05-08 15:37:43.474088465
+#  Last modified 2022-05-09 01:51:21.604013647
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 34):
@@ -364,7 +363,7 @@ build/WrongCat.o: srcs/WrongCat.cpp | build
 # Not a target:
 srcs/Cat.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-08 15:09:11.21408812
+#  Last modified 2022-05-09 01:49:30.054013625
 #  File has been updated.
 #  Successfully updated.
 
@@ -378,7 +377,7 @@ srcs/Brain.cpp:
 build/Dog.o: srcs/Dog.cpp | build
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Dog'
-#  Last modified 2022-05-08 15:37:43.264088465
+#  Last modified 2022-05-09 01:51:21.354013647
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 34):
@@ -398,6 +397,6 @@ build/Dog.o: srcs/Dog.cpp | build
 # strcache performance: lookups = 92 / hit rate = 48%
 # hash-table stats:
 # Load=47/8192=1%, Rehash=0, Collisions=1/92=1%
-# Finished Make data base on Sun May  8 15:37:52 2022
+# Finished Make data base on Mon May  9 01:51:35 2022
 
  

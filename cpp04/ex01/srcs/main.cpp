@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 11:04:24 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/08 16:51:25 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 01:55:59 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ std::string	to_string(int num)
 	std::string	temp;
 	std::string	ret;
 
+	if (num == 0)
+		temp.push_back('0');
 	for (; num != 0; num /= 10)
-		temp.push_back(num / 10 + '0');
-	for (size_t i = 0; i < temp.size(); i++)
+		temp.push_back(num % 10 + '0');
+	for (int i = temp.size() - 1; i >= 0; i--)
 		ret.push_back(temp[i]);
-	
+
 	return (ret);
 }
 
@@ -42,42 +44,45 @@ void	makeBrain(Brain *brain)
 	int i;
 
 	for (i = 0; i < 100; i++)
-		brain[0].setIdea(i, "number idea" + to_string(i));
+		brain[0].setIdea(i, "number idea " + to_string(static_cast<int>(i)));
 	for (i = 0; i < 26; i++)
-		brain[1].setIdea(i, "alphabet idea" + to_string('a' + i));
+		brain[1].setIdea(i, "alphabet idea " + to_string(static_cast<char>('a' + i)));
 }
 
 int main()
 {
+	std::cout << "\n" << "-------------------" << "\n\n";
 	std::cout << "[subject's testcode]" << "\n\n";
 
+	Brain	brain[2];
+	makeBrain(brain);
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
+	const Animal* k = new Dog(brain[0]);
+
+	k->speakIdea(0, 5);
+
 	delete j;//should not create a leak
 	delete i;
+	delete k;
 
 
-	std::cout << "\n\n";
+	std::cout << "\n" << "-------------------" << "\n\n";
 	std::cout << "[correct code]" << "\n\n";
 
-	Animal *k = new Dog();
-	Animal *l = new Cat();
-	Brain	brain[2];
+	Animal *l = new Dog();
+	Animal *m = new Cat();
 	std::cout << "\n";
-	makeBrain(brain);
-	k->makeSound();
 	l->makeSound();
-	k->setBrain(brain[0]);
-	l->setBrain(brain[1]);
-	delete k;
+	m->makeSound();
+	l->setBrain(brain[0]);
+	m->setBrain(brain[1]);
+	l->speakIdea(5, 10);
+	m->speakIdea(10, 15);
 	delete l;
+	delete m;
 
-	/* Dog class와 Cat class의 생성자
-		-> 인자 없이 생성 시 brain 생성 안하도록. (포인터는 NULL로 초기화)
-	   Wrong Animal과 Wrong Cat class 완성.
-	*/
-
-	std::cout << "\n\n";
+	std::cout << "\n" << "-------------------" << "\n\n";
 	std::cout << "[wrong code]" << "\n\n";
 
 

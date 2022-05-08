@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 11:12:58 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/08 16:34:45 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 01:31:55 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,13 @@ void	Animal::makeSound(void) const
 
 void	Animal::setBrain(const Brain &newBrain)
 {
-	std::cout << "Animal cannot set brain" << std::endl;
+	std::cout << "Animal class cannot set brain" << std::endl;
 	(void)newBrain;
+}
+
+void	Animal::speakIdea(int start, int end) const
+{
+	std::cout << "Animal class cannot speak idea" << std::endl;
+	(void)start;
+	(void)end;
 }
