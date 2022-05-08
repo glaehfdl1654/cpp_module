@@ -6,13 +6,13 @@
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 03:10:03 by jaejeong          #+#    #+#              #
-#    Updated: 2022/05/03 15:09:25 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/05/08 14:01:59 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX			= c++
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98 -Iincludes
-NAME		= Polymorphism
+NAME		= brain
 SRCNAME 	= main.cpp \
 			  Animal.cpp \
 			  Cat.cpp \
