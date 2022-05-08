@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:27:31 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 18:11:47 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/08 16:28:40 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ public:
 	virtual ~Cat();
 
 	virtual void	makeSound(void) const;
-	const Brain	&getBrain() const;
-	void	setBrain(const Brain &newBrain);
+	virtual void	setBrain(const Brain &newBrain);
 };
 
 #endif

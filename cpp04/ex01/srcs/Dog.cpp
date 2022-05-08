@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:35:21 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/08 14:39:53 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/08 16:46:56 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,12 @@ Dog::~Dog()
 void	Dog::makeSound(void) const
 {
 	std::cout << "bowwow bowwow!" << std::endl;
+}
+
+void	Dog::setBrain(const Brain &newBrain)
+{
+	if (brain)
+		delete brain;
+	brain = new Brain();
+	*brain = newBrain;
 }

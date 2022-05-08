@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 11:12:58 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 12:52:37 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/08 16:34:45 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,10 @@ std::string	Animal::getType(void) const
 void	Animal::makeSound(void) const
 {
 	std::cout << "Animal has no sound" << std::endl;
+}
+
+void	Animal::setBrain(const Brain &newBrain)
+{
+	std::cout << "Animal cannot set brain" << std::endl;
+	(void)newBrain;
 }

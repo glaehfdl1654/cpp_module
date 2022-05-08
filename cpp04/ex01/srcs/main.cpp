@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 11:04:24 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/08 15:41:21 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/08 16:51:25 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,21 +49,38 @@ void	makeBrain(Brain *brain)
 
 int main()
 {
+	std::cout << "[subject's testcode]" << "\n\n";
+
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	
-
-	Brain	brain[2];
-	makeBrain(brain);
-
-	std::cout << "\n\n";
-
-	i->setBrain(brain[0]);
-
-	std::cout << "\n\n";
-
 	delete j;//should not create a leak
 	delete i;
+
+
+	std::cout << "\n\n";
+	std::cout << "[correct code]" << "\n\n";
+
+	Animal *k = new Dog();
+	Animal *l = new Cat();
+	Brain	brain[2];
+	std::cout << "\n";
+	makeBrain(brain);
+	k->makeSound();
+	l->makeSound();
+	k->setBrain(brain[0]);
+	l->setBrain(brain[1]);
+	delete k;
+	delete l;
+
+	/* Dog class와 Cat class의 생성자
+		-> 인자 없이 생성 시 brain 생성 안하도록. (포인터는 NULL로 초기화)
+	   Wrong Animal과 Wrong Cat class 완성.
+	*/
+
+	std::cout << "\n\n";
+	std::cout << "[wrong code]" << "\n\n";
+
+
 
 	return 0;
 }

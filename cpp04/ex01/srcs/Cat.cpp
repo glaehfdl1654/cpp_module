@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:30:27 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/08 15:09:11 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/08 16:28:45 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,6 @@ void	Cat::makeSound(void) const
 	std::cout << "Cat has no sound" << std::endl;
 }
 
-const Brain	&Cat::getBrain() const
-{
-	return (*brain);
-}
-
 void	Cat::setBrain(const Brain &newBrain)
 {
 	if (brain)
@@ -57,4 +52,3 @@ void	Cat::setBrain(const Brain &newBrain)
 	brain = new Brain();
 	*brain = newBrain;
 }
-

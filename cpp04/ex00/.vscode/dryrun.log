@@ -1,0 +1,12 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/jaejeong/42cursus/cpp_module/cpp04/ex00'
+mkdir build
+c++ -Wall -Werror -Wextra -std=c++98 -Iincludes -o build/main.o -c srcs/main.cpp
+c++ -Wall -Werror -Wextra -std=c++98 -Iincludes -o build/Animal.o -c srcs/Animal.cpp
+c++ -Wall -Werror -Wextra -std=c++98 -Iincludes -o build/Cat.o -c srcs/Cat.cpp
+c++ -Wall -Werror -Wextra -std=c++98 -Iincludes -o build/Dog.o -c srcs/Dog.cpp
+c++ -Wall -Werror -Wextra -std=c++98 -Iincludes -o build/WrongAnimal.o -c srcs/WrongAnimal.cpp
+c++ -Wall -Werror -Wextra -std=c++98 -Iincludes -o build/WrongCat.o -c srcs/WrongCat.cpp
+c++ -Wall -Werror -Wextra -std=c++98 -Iincludes -o animal build/main.o build/Animal.o build/Cat.o build/Dog.o build/WrongAnimal.o build/WrongCat.o
+make: Leaving directory '/home/jaejeong/42cursus/cpp_module/cpp04/ex00'
+ 
