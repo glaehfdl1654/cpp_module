@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:46:02 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 14:39:34 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/08 14:27:17 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ WrongCat::WrongCat() : WrongAnimal()
 	type = "WrongCat";
 }
 
-WrongCat::WrongCat(const WrongCat& other)
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
 {
 	std::cout << "Wrong Cat Copy Constructed" << std::endl;
 	*this = other;

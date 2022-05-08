@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:35:21 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 17:51:19 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/08 14:39:53 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Dog::Dog() : Animal()
 	brain = new Brain();
 }
 
-Dog::Dog(const Dog& other)
+Dog::Dog(const Dog& other) : Animal(other)
 {
 	std::cout << "Dog Copy Constructed" << std::endl;
 	*this = other;

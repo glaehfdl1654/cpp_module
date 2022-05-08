@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/jaejeong/42cursus/cpp_module/cpp04/ex01'
+make: 'brain' is up to date.
+make: Leaving directory '/home/jaejeong/42cursus/cpp_module/cpp04/ex01'
+ 

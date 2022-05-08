@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:30:27 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 14:39:09 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/08 14:21:13 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Cat::Cat() : Animal()
 	type = "Cat";
 }
 
-Cat::Cat(const Cat& other)
+Cat::Cat(const Cat& other) : Animal(other)
 {
 	std::cout << "Cat Copy Constructed" << std::endl;
 	*this = other;

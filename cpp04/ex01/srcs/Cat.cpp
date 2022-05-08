@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:30:27 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 18:14:59 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/08 15:09:11 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ Cat::Cat() : Animal()
 	brain = new Brain();
 }
 
-Cat::Cat(const Cat& other)
+Cat::Cat(const Cat& other) : Animal(other)
 {
 	std::cout << "Cat Copy Constructed" << std::endl;
+	brain = new Brain();
 	*this = other;
 }
 
 Cat& Cat::operator=(const Cat& rhs)
 {
 	type = rhs.type;
-	for (int i = 0; i < 100; i++)
-		brain->setIdea(i, rhs.brain->getIdea(i));
+	*brain = *(rhs.brain);
 	return (*this);
 }
 
@@ -55,6 +55,6 @@ void	Cat::setBrain(const Brain &newBrain)
 	if (brain)
 		delete brain;
 	brain = new Brain();
-	
+	*brain = newBrain;
 }
 

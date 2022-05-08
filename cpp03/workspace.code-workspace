@@ -10,5 +10,7 @@
 			"path": "ex02"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"makefile.extensionOutputFolder": "./.vscode"
+	}
 }

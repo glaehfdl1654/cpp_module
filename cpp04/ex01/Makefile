@@ -6,7 +6,7 @@
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 03:10:03 by jaejeong          #+#    #+#              #
-#    Updated: 2022/05/08 14:01:59 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/05/08 15:37:41 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRCNAME 	= main.cpp \
 			  Cat.cpp \
 			  Dog.cpp \
 			  WrongAnimal.cpp \
-			  WrongCat.cpp
+			  WrongCat.cpp \
+			  Brain.cpp
 SRCS		= $(addprefix $(SRCDIR)/, $(SRCNAME))
 SRCDIR		= srcs
 OBJS		= $(addprefix $(OBJDIR)/, $(SRCNAME:.cpp=.o))
