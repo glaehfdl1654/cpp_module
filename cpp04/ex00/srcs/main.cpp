@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 11:04:24 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/08 14:37:44 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:12:01 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,8 @@ int main()
 	delete meta2;
 	delete k;
 
+	std::cout << std::endl;
+	system("leaks animal");
+	std::cout << std::endl;
 	return 0;
 }

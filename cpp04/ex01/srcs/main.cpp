@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 11:04:24 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/09 16:57:11 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:09:39 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ int main()
 	// delete n;
 
 	delete []brain;
+	std::cout << std::endl;
 	system("leaks brain");
+	std::cout << std::endl;
 	return 0;
 }
