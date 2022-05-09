@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:30:27 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/09 01:49:30 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 11:26:31 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Cat::Cat() : Animal()
 {
 	std::cout << "Cat Constructed" << std::endl;
 	type = "Cat";
-	brain = NULL;
+	brain = new Brain();
 }
 
 Cat::Cat(const Brain &brain) : Animal()

@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May  8 16:17:06 2022
+# Make data base, printed on Mon May  9 11:20:12 2022
 
 # Variables
 
@@ -59,7 +59,7 @@ XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-99a6f486-85fd-4eca-af2b-3443bec7e595.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-fa5a331b-68c4-4937-ae43-9205de7dcdce.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -77,11 +77,11 @@ PWD = /home/jaejeong/42cursus/cpp_module/cpp04/ex00
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/15091_interop
+WSL_INTEROP = /run/WSL/8_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # environment
-WT_SESSION = a6d80aac-2f92-4955-b238-aef8b14376df
+WT_SESSION = b09690ce-cf21-4c98-a23f-2ae9a9b5b667
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -177,7 +177,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-_P9K_TTY = /dev/pts/3
+_P9K_TTY = /dev/pts/0
 # environment
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
@@ -274,8 +274,8 @@ build:
 # automatic
 # < := 
 # automatic
- 
 # ^ := 
+ 
 # automatic
 # ? := 
 # variable set hash-table stats:
@@ -362,6 +362,6 @@ build/Dog.o:
 # strcache performance: lookups = 57 / hit rate = 45%
 # hash-table stats:
 # Load=31/8192=0%, Rehash=0, Collisions=1/57=2%
-# Finished Make data base on Sun May  8 16:17:06 2022
+# Finished Make data base on Mon May  9 11:20:12 2022
 
  

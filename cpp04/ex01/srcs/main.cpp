@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 11:04:24 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/09 01:55:59 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 12:05:31 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int main()
 	std::cout << "\n" << "-------------------" << "\n\n";
 	std::cout << "[wrong code]" << "\n\n";
 
-
+	// check leaks, write wrong code
 
 	return 0;
 }

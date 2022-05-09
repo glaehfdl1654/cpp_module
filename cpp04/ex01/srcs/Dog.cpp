@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:35:21 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/09 01:49:22 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 11:26:41 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Dog::Dog() : Animal()
 {
 	std::cout << "Dog Constructed" << std::endl;
 	type = "Dog";
-	brain = NULL;
+	brain = new Brain();
 }
 
 Dog::Dog(const Brain &brain) : Animal()
