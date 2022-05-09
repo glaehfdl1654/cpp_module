@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 11:04:24 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/09 17:09:39 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:37:03 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ void	makeBrain(Brain *brain)
 
 int main()
 {
-	std::cout << "\n" << "-------------------" << "\n\n";
-	std::cout << "[subject's testcode]" << "\n\n";
-
 	Brain	*brain = new Brain[2]();
 	makeBrain(brain);
+
+	std::cout << "\n" << "-------------------" << "\n\n";
+	std::cout << "[subject's testcode]" << "\n\n";
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 

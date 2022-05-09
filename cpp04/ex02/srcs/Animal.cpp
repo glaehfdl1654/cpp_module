@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/03 11:12:58 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/05/09 17:40:20 by jaejeong         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Animal.hpp"
+#include <iostream>
+
+Animal::Animal(std::string type) : type(type)
+{
+	std::cout << "Animal Constructed" << std::endl;
+}
+
+Animal::Animal(const Animal& other)
+{
+	std::cout << "Animal Copy Constructed" << std::endl;
+	*this = other;
+}
+
+Animal& Animal::operator=(const Animal& rhs)
+{
+	type = rhs.type;
+	return (*this);
+}
+
+Animal::~Animal()
+{
+	std::cout << "Animal Destructed" << std::endl;
+}
+
+std::string	Animal::getType(void) const
+{
+	return (type);
+}
