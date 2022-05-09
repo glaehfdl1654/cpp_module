@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:46:41 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/03 12:52:50 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 15:24:51 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,17 @@ std::string	WrongAnimal::getType(void) const
 void	WrongAnimal::makeSound(void) const
 {
 	std::cout << "Wrong Animal has no sound" << std::endl;
+}
+
+void	WrongAnimal::setBrain(const Brain &newBrain)
+{
+	std::cout << "Wrong Animal class cannot set brain" << std::endl;
+	(void)newBrain;
+}
+
+void	WrongAnimal::speakIdea(int start, int end) const
+{
+	std::cout << "Wrong Animal class cannot speak idea" << std::endl;
+	(void)start;
+	(void)end;
 }

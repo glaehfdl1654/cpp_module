@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 11:04:24 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/09 12:05:31 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 15:34:24 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int main()
 	std::cout << "\n" << "-------------------" << "\n\n";
 	std::cout << "[subject's testcode]" << "\n\n";
 
-	Brain	brain[2];
+	Brain	*brain = new Brain[2]();
 	makeBrain(brain);
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -70,22 +70,26 @@ int main()
 	std::cout << "\n" << "-------------------" << "\n\n";
 	std::cout << "[correct code]" << "\n\n";
 
-	Animal *l = new Dog();
-	Animal *m = new Cat();
+	Dog *l = new Dog();
 	std::cout << "\n";
-	l->makeSound();
-	m->makeSound();
 	l->setBrain(brain[0]);
-	m->setBrain(brain[1]);
+	Dog m(*l);
 	l->speakIdea(5, 10);
-	m->speakIdea(10, 15);
+	m.speakIdea(5, 10);
 	delete l;
-	delete m;
 
 	std::cout << "\n" << "-------------------" << "\n\n";
-	std::cout << "[wrong code]" << "\n\n";
+	// std::cout << "[wrong code]" << "\n\n";
 
-	// check leaks, write wrong code
+	// WrongCat *n = new WrongCat();
+	// n->makeSound();
+	// n->setBrain(brain[0]);
+	// WrongCat o(*n);
+	// n->speakIdea(3, 8);
+	// o.speakIdea(3, 8);
+	// delete n;
 
+	delete []brain;
+	system("leaks brain");
 	return 0;
 }
