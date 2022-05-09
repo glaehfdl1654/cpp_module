@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:30:27 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/09 15:07:53 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 18:15:50 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ Cat::Cat(const Brain &brain) : Animal()
 {
 	std::cout << "Cat Constructed" << std::endl;
 	type = "Cat";
-	this->brain = NULL;
-	setBrain(brain);
+	*(this->brain) = brain;
 }
 
 Cat::Cat(const Cat& other) : Animal(other)
@@ -45,8 +44,7 @@ Cat& Cat::operator=(const Cat& rhs)
 Cat::~Cat()
 {
 	std::cout << "Cat Destructed" << std::endl;
-	if (brain)
-		delete brain;
+	delete brain;
 }
 
 void	Cat::makeSound(void) const
@@ -56,9 +54,6 @@ void	Cat::makeSound(void) const
 
 void	Cat::setBrain(const Brain &newBrain)
 {
-	if (brain)
-		delete brain;
-	brain = new Brain();
 	*brain = newBrain;
 }
 

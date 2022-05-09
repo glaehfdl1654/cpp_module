@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 11:04:24 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/09 17:47:39 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:49:51 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int main()
 	animals[1] = new Cat(); std::cout << std::endl;
 	animals[0]->makeSound(); std::cout << std::endl;
 	animals[1]->makeSound(); std::cout << std::endl;
-	// animals[2] = new Animal(); // This is abstract class, error
+	// animals[2] = new Animal(); std::cout << std::endl; // This is abstract class, error
 	delete animals[0]; std::cout << std::endl;
 	delete animals[1]; std::cout << std::endl;
-	// delete animals[2];
+	// delete animals[2]; std::cout << std::endl;
 
 	std::cout << std::endl;
 	system("leaks constractClass");

@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:46:02 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/09 15:44:42 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 18:15:08 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ void	WrongCat::makeSound(void) const
 
 void	WrongCat::setBrain(Brain &newBrain)
 {
-	if (brain)
-		delete brain;
 	brain = &newBrain;
 }
 
