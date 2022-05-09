@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 11:04:24 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/09 15:34:24 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 16:57:11 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,27 @@ int main()
 	makeBrain(brain);
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	const Animal* k = new Dog(brain[0]);
 
-	k->speakIdea(0, 5);
 
 	delete j;//should not create a leak
 	delete i;
-	delete k;
 
+
+	std::cout << "\n" << "-------------------" << "\n\n";
+	std::cout << "[Animal array]" << "\n\n";
+
+	Animal *animals[10];
+	for (int i = 0; i < 5; i++)
+		animals[i] = new Dog();
+	std::cout << "\n";
+	for (int i = 5; i < 10; i++)
+		animals[i] = new Cat();
+	std::cout << "\n";
+	for (int i = 0; i < 10; i++)
+		animals[i]->makeSound();
+	std::cout << "\n";
+	for (int i = 0; i < 10; i++)
+		delete animals[i];
 
 	std::cout << "\n" << "-------------------" << "\n\n";
 	std::cout << "[correct code]" << "\n\n";

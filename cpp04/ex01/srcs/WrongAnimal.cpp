@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:46:41 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/09 15:24:51 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/09 15:44:25 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	WrongAnimal::makeSound(void) const
 	std::cout << "Wrong Animal has no sound" << std::endl;
 }
 
-void	WrongAnimal::setBrain(const Brain &newBrain)
+void	WrongAnimal::setBrain(Brain &newBrain)
 {
 	std::cout << "Wrong Animal class cannot set brain" << std::endl;
 	(void)newBrain;
