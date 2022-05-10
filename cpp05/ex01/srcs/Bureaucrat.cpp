@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 07:56:26 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/10 11:29:03 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/10 12:46:15 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,20 @@ void	Bureaucrat::decreaseGrade()
 	if (grade >= 150)
 		throw (GradeTooLowException());
 	grade++;
+}
+
+void	Bureaucrat::signForm(Form& form) const
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << "Bureaucrat " << name << " signed"
+				  << "Form " << form.getName() << std::endl;
+	}
+	catch (std::exception &exception)
+	{
+		std::cout << "sign is failed. " << exception.what() << std::endl;
+	}
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureau)

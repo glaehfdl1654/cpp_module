@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 07:56:23 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/10 13:14:04 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:16:23 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -44,6 +47,8 @@ public :
 	int		getGrade() const;
 	void	increaseGrade();
 	void	decreaseGrade();
+
+	void signForm(Form& form) const;
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureau);
