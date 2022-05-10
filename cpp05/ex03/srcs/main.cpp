@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 07:56:28 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/10 22:40:20 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/10 23:14:10 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,7 @@ int	main(void)
 		d.executeForm(*form[i]);
 		std::cout << std::endl;
 	}
-
-	delete []form;
-
+	for (int i = 0; i < 3; i++)
+		delete form[i];
 	return (0);
 }
