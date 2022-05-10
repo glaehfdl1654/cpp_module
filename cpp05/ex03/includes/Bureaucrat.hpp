@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 07:56:23 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/10 15:26:24 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/10 22:12:00 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ private :
 	int	grade;
 
 	Bureaucrat();
-public :
 	class GradeTooHighException : public std::exception
 	{
 	public:
@@ -37,7 +36,7 @@ public :
 	public:
 		virtual const char* what(void) const throw();
 	};
-
+public :
 	Bureaucrat(const std::string name, const int grade);
 	Bureaucrat(const Bureaucrat &other);
 	Bureaucrat &operator=(const Bureaucrat &rhs);

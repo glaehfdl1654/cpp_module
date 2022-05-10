@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:01:21 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/10 13:40:31 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/10 22:13:23 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ private :
 	bool		isSigned;
 	
 	Form();
-public :
 	class GradeTooHighException : public std::exception
 	{
 	public:
@@ -39,6 +38,7 @@ public :
 	public:
 		virtual const char* what(void) const throw();
 	};
+public :
 	Form(const std::string name, const int gradeToSign, const int gradeToExecute);
 	Form(const Form &other);
 	Form &operator=(const Form &rhs);
