@@ -1,0 +1,53 @@
+{
+	"folders": [
+		{
+			"path": "ex00"
+		},
+		{
+			"path": "ex01"
+		},
+		{
+			"path": "ex02"
+		},
+		{
+			"path": "ex03"
+		}
+	],
+	"settings": {
+		"makefile.extensionOutputFolder": "./.vscode",
+		"files.associations": {
+			"__config": "cpp",
+			"__debug": "cpp",
+			"__functional_base": "cpp",
+			"__nullptr": "cpp",
+			"__string": "cpp",
+			"__tuple": "cpp",
+			"algorithm": "cpp",
+			"atomic": "cpp",
+			"bit": "cpp",
+			"cctype": "cpp",
+			"cstddef": "cpp",
+			"cstdint": "cpp",
+			"cstdio": "cpp",
+			"cstdlib": "cpp",
+			"cstring": "cpp",
+			"cwchar": "cpp",
+			"cwctype": "cpp",
+			"exception": "cpp",
+			"functional": "cpp",
+			"initializer_list": "cpp",
+			"iosfwd": "cpp",
+			"iterator": "cpp",
+			"limits": "cpp",
+			"memory": "cpp",
+			"new": "cpp",
+			"stdexcept": "cpp",
+			"string": "cpp",
+			"string_view": "cpp",
+			"tuple": "cpp",
+			"type_traits": "cpp",
+			"typeinfo": "cpp",
+			"utility": "cpp"
+		}
+	}
+}
