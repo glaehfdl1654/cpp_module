@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 07:56:23 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/10 15:22:42 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:26:24 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ public :
 	void	decreaseGrade();
 
 	void	signForm(Form& form) const;
+	void	executeForm(const Form &form);
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureau);

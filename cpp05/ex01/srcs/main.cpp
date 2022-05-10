@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 07:56:28 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/10 13:52:19 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/10 19:19:11 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,40 +42,20 @@ int	main(void)
 	std::cout << form1 << std::endl;
 	std::cout << form2 << std::endl;
 
-	try
-	{
-		a.signForm(form1);
-		std::cout << std::endl;
-		std::cout << form1 << std::endl;
-	}
-	catch(std::exception &exception)
-	{
-		std::cout << exception.what() << std::endl;
-	}
+	a.signForm(form1);
+	std::cout << std::endl;
+	std::cout << form1 << std::endl;
 
-	try
-	{
-		b.signForm(form2);
-		std::cout << std::endl;
-		std::cout << form2 << std::endl;
-	}
-	catch(std::exception &exception)
-	{
-		std::cout << exception.what() << std::endl;
-	}
+	b.signForm(form2);
+	std::cout << std::endl;
+	std::cout << form2 << std::endl;
 
-	try
-	{
-		b.increaseGrade();
-		std::cout << b << std::endl;
-		b.signForm(form2);
-		std::cout << std::endl;
-		std::cout << form2 << std::endl;
-	}
-	catch(std::exception &exception)
-	{
-		std::cout << exception.what() << std::endl;
-	}
+	b.increaseGrade();
+	std::cout << b << std::endl;
+
+	b.signForm(form2);
+	std::cout << std::endl;
+	std::cout << form2 << std::endl;
 
 	return (0);
 }
