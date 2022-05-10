@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 07:56:26 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/10 11:29:03 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/10 14:44:54 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 const char*	Bureaucrat::GradeTooHighException::what(void) const throw()
 {
-	return ("Grade is too high.");
+	return ("grade is too high.");
 }
 
 const char*	Bureaucrat::GradeTooLowException::what(void) const throw()
 {
-	return ("Grade is too low.");
+	return ("grade is too low.");
 }
 
 Bureaucrat::Bureaucrat()
