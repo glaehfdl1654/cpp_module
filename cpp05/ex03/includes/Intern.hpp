@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:48:25 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/10 21:58:28 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/10 22:34:34 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,10 @@ class Form;
 class Intern
 {
 private :
-	Form *createShrubberyForm(const std::string &target);
-	Form *createRobotomyForm(const std::string &target);
-	Form *createPresidentialForm(const std::string &target);
-	class NoMatchingFormNameException : public std::exception
-	{
-		public:
-			const char *what() const throw();
-	};
+	Form	*createShrubberyForm(const std::string &target);
+	Form	*createRobotomyForm(const std::string &target);
+	Form	*createPresidentialForm(const std::string &target);
+	Form	*(Intern::*f[3])(const std::string &target);
 public :
 	Intern();
 	Intern(const Intern &other);

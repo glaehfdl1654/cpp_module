@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:56:53 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/10 22:05:52 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/10 22:35:19 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,34 +36,6 @@ Intern::~Intern()
 
 }
 
-
-Form	*Intern::makeForm(const std::string &formName, const std::string &target)
-{
-	std::string forms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-	try {
-		for (int i = 0; i < 3; i++)
-		{
-			if (forms[i] == formName)
-			{
-				switch (i) {
-					case 0:
-						return (createShrubberyForm(target));
-					case 1:
-						return (createRobotomyForm(target));
-					case 2:
-						return (createPresidentialForm(target));
-					default:
-						break ;
-				}
-			}
-		}
-		throw (NoMatchingFormNameException());
-	} catch (const std::exception &e) {
-		std::cout << "[ Intern ] " << e.what() << std::endl;
-	}
-	return (NULL);
-}
-
 Form *Intern::createShrubberyForm(const std::string &target)
 {
 	std::cout << "Intern creates ShrubberyCreationForm" << std::endl;
@@ -82,8 +54,19 @@ Form *Intern::createPresidentialForm(const std::string &target)
 	return (new PresidentialPardonForm(target));
 }
 
-//exception
-const char *Intern::NoMatchingFormNameException::what() const throw()
+Form	*Intern::makeForm(const std::string &formName, const std::string &target)
 {
-	return ("ERROR: Cannot find matching form");
+	std::string forms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+
+	f[0] = &Intern::createShrubberyForm;
+	f[1] = &Intern::createRobotomyForm;
+	f[2] = &Intern::createPresidentialForm;
+
+	for (int i = 0; i < 3; i++)
+	{
+		if (formName == forms[i])
+			return ((this->*f[i])(target));
+	}
+	std::cout << "cannot find matching form." << std::endl;
+	return (NULL);
 }
