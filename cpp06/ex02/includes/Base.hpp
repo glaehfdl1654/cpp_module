@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 11:18:28 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/11 18:41:53 by jaejeong         ###   ########.fr       */
+/*   Created: 2022/05/11 19:17:05 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/05/11 19:17:06 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <exception>
-#include <Converter.hpp>
+#ifndef BASE_HPP
+#define BASE_HPP
 
-int	main(int argc, char *argv[])
+class	Base
 {
-	if (argc != 2)
-	{
-		std::cout << "Use only one argument." << std::endl;
-		return 0;
-	}
-	Converter	converter(argv[1]);
-	try
-	{
-		converter.detect();
-		converter.convert();
-	}
-	catch(std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-}
+	public:
+		virtual ~Base();
+};
+
+#endif

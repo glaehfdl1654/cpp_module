@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 11:18:28 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/11 18:41:53 by jaejeong         ###   ########.fr       */
+/*   Created: 2022/05/11 19:17:16 by jaejeong          #+#    #+#             */
+/*   Updated: 2022/05/11 19:17:54 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <exception>
-#include <Converter.hpp>
+#ifndef DATA_HPP
+# define DATA_HPP
 
-int	main(int argc, char *argv[])
+# include <iostream>
+
+struct	Data
 {
-	if (argc != 2)
-	{
-		std::cout << "Use only one argument." << std::endl;
-		return 0;
-	}
-	Converter	converter(argv[1]);
-	try
-	{
-		converter.detect();
-		converter.convert();
-	}
-	catch(std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-}
+	int			i;
+	double		d;
+	std::string	str;
+};
+
+uintptr_t	serialize(Data *ptr);
+Data*		deserialize(uintptr_t raw);
+
+#endif
