@@ -1,0 +1,8 @@
+{
+	"makefile.extensionOutputFolder": "./.vscode",
+	"files.associations": {
+		"**/*.d": "makefile",
+		"iosfwd": "cpp",
+		"ostream": "cpp"
+	}
+}
