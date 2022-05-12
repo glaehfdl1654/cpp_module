@@ -6,13 +6,14 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:08:34 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/11 18:56:21 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/12 15:59:17 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Converter.hpp"
 #include <iostream>
 #include <iomanip>
+#include <sstream>
 
 Converter::Converter(std::string literal)
 	: type(INIT), literal(literal), infNanFlag(false), dotFlag(0), fFlag(0)
@@ -53,8 +54,8 @@ void	Converter::detect()
 		infNanFlag = true;
 	else if (!checkFlags())
 		throw (InvalidInputException());
-	else
-		detectNumType();
+	else if (!(detectFloat() || detectDouble() || detectInt()))
+		throw (InvalidInputException());
 }
 
 bool	Converter::detectChar()
@@ -108,27 +109,42 @@ bool	Converter::checkFlags()
 	return true;
 }
 
-void	Converter::detectNumType()
+bool	Converter::detectFloat()
 {
 	size_t	fIdx = literal.find('f');
+	if (fFlag != 1 || dotFlag != 1 || fIdx != literal.size() - 1)
+		return false;
+	type = FLOAT;
+	literal.pop_back();
+	std::stringstream stream(literal);
+	stream >> _f;
+	if (stream.fail())
+		throw InvalidInputException();
+	return true;
+}
 
-	if (fFlag == 1 && dotFlag == 1 && fIdx == literal.size() - 1)
-	{
-		type = FLOAT;
-		_f = stof(literal);
-	}
-	else if (fFlag == 0 && dotFlag == 1)
-	{
-		type = DOUBLE;
-		_d = stod(literal);
-	}
-	else if (fFlag == 0 && dotFlag == 0)
-	{
-		type = INT;
-		_i = stoi(literal);
-	}
-	else
-		throw (InvalidInputException());
+bool	Converter::detectDouble()
+{
+	if (fFlag != 0 || dotFlag != 1)
+		return false;
+	type = DOUBLE;
+	std::stringstream stream(literal);
+	stream >> _d;
+	if (stream.fail())
+		throw InvalidInputException();
+	return true;
+}
+
+bool	Converter::detectInt()
+{
+	if (fFlag != 0 || dotFlag != 0)
+		return false;
+	type = INT;
+	std::stringstream iss(literal);
+	iss >> _i;
+	if (iss.fail())
+		throw InvalidInputException();
+	return true;
 }
 
 void	Converter::convert()
@@ -139,11 +155,7 @@ void	Converter::convert()
 		convertInfNan();
 		return ;
 	}
-	for (int i = 0; i < 4; i++)
-	{
-		if (i == type)
-			(this->*f[i])();
-	}
+	(this->*f[type])();
 }
 
 void	Converter::convertInfNan()
@@ -181,7 +193,7 @@ void	Converter::convertFloat()
 	std::cout << "char: ";
 	if (!(-128 <= _f && _f <= 127))
 		std::cout << "impossible" << std::endl;
-	else if (!(32 <= _i && _i <= 126))
+	else if (!(32 <= _f && _f <= 126))
 		std::cout << "Non displayable" << std::endl;
 	else
 		std::cout << "'" << static_cast<char>(_f) << "'" << std::endl;
@@ -196,15 +208,13 @@ void	Converter::convertFloat()
 
 void	Converter::convertDouble()
 {
-	//char
 	std::cout << "char: ";
-	if (_d < -128 || _d > 127)
+	if (!(-128 <=_d && _d <= 127))
 		std::cout << "impossible" << std::endl;
-	else if (_d < 32 || _d > 126)
+	else if (!(32 <= _d && _d <= 126))
 		std::cout << "Non displayable" << std::endl;
 	else
 		std::cout << "\'" << static_cast<char>(_d) << "\'" << std::endl;
-	//other
 	std::cout << "int: ";
 	if (_d > INT_MAX || _d < INT_MIN)
 		std::cout << "impossible" << std::endl;

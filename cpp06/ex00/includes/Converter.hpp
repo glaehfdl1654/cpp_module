@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:07:30 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/11 18:42:04 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/12 15:55:29 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ private :
 		const char *what() const throw();
 	};
 	bool	detectChar();
+	bool	detectFloat();
+	bool	detectDouble();
+	bool	detectInt();
+
 	bool	detectInfNan();
 	bool	checkFlags();
 	void	detectNumType();
