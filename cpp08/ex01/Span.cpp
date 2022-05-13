@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:51:15 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/13 18:07:47 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/13 18:39:49 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Span::~Span()
 
 void	Span::addNumber(int num)
 {
-	if (data.size() > sizeMax)
+	if (data.size() >= sizeMax)
 		throw (std::runtime_error("Cannot put number."));
 	data.push_back(num);
 }

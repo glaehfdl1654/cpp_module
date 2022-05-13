@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:51:05 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/13 16:03:13 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/13 18:40:36 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,15 @@ public :
 	~Span();
 	
 	void	addNumber(int num);
-
-	template<typename Iter>
-	void	addNumber(Iter begin, Iter end);
-
 	unsigned int	shortestSpan();
 	unsigned int	longestSpan();
-};
 
-template<typename Iter>
-void	Span::addNumber(Iter begin, Iter end)
-{
-	for (Iter i = begin; i != end; i++)
-		addNumber(*i);
-}
+	template<typename Iter>
+	void	addNumber(Iter begin, Iter end)
+	{
+		for (Iter i = begin; i != end; i++)
+			addNumber(*i);
+	}
+};
 
 #endif

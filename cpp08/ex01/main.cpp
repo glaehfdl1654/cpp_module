@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:58:39 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/13 16:01:04 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/13 18:39:00 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,30 @@ int main()
 	std::cout << std::endl;
 
 	std::cout << "[Test exception case]" << std::endl;
+	try
+	{
+		Span	oneElementSpan(1);
+		
+		oneElementSpan.addNumber(50);
+		std::cout << oneElementSpan.shortestSpan() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		Span	span3(3);
+		
+		span3.addNumber(1);
+		span3.addNumber(2);
+		span3.addNumber(3);
+		span3.addNumber(4);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
 	return (0);
 }
