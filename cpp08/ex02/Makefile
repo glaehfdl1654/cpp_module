@@ -6,15 +6,14 @@
 #    By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/04 15:09:44 by jaejeong          #+#    #+#              #
-#    Updated: 2022/05/13 15:47:00 by jaejeong         ###   ########.fr        #
+#    Updated: 2022/05/13 16:05:57 by jaejeong         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX		= c++
 CXXFLAGS= -Wall -Werror -Wextra -std=c++98
-NAME	= span
-SRCS	= main.cpp \
-		  Span.cpp
+NAME	= mutantstack
+SRCS	= main.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 $(NAME)	: $(OBJS)
