@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 10:09:06 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/13 13:56:01 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/13 13:56:33 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	main(void)
 {
 	std::vector<int>	vec;
 	std::list<int>		lst;
-	std::queue<int>		que;
 
 	for (int i = 0; i < 42; i++)
 	{
