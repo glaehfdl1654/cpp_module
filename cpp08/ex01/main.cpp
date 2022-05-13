@@ -6,7 +6,7 @@
 /*   By: jaejeong <jaejeong@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:58:39 by jaejeong          #+#    #+#             */
-/*   Updated: 2022/05/13 18:39:00 by jaejeong         ###   ########.fr       */
+/*   Updated: 2022/05/13 18:45:49 by jaejeong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int main()
 		sp3.addNumber(i * 3);
 	std::cout << sp3.shortestSpan() << std::endl;
 	std::cout << sp3.longestSpan() << std::endl;
+
+	std::cout << std::endl;
 
 	std::cout << "[Test input range of iterators]" << std::endl;
 	Span sp4(5);
